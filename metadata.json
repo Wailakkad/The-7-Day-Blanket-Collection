@@ -1,0 +1,6 @@
+{
+  "name": "The 7-Day Crochet Blanket Collection",
+  "description": "7 beginner-friendly crochet blankets + a simple system to choose, plan, crochet, customize, and finish with confidence. Includes sizing, yarn help, borders, troubleshooting, and printables.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
