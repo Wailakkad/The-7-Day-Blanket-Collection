@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Sparkles,
@@ -284,6 +285,12 @@ export default function BlanketCollectionLandingPage() {
               </span>
             </div>
             <div className="flex items-center gap-4">
+              <Link
+                to="/blog"
+                className="text-xs font-medium text-[#5B5B5B] hover:text-[#1F1F1F] transition-colors"
+              >
+                Blog
+              </Link>
               <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-[#5B5B5B] bg-[#FFFFFF] border border-[#E9E1D7] px-3 py-1 rounded-full shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#2F4A3A]" /> PDF Digital Guide
               </span>
@@ -1300,6 +1307,9 @@ export default function BlanketCollectionLandingPage() {
             <a href="#the-blankets" onClick={(e) => { e.preventDefault(); scrollToSection('the-blankets'); }} className="hover:text-[#1F1F1F] transition-colors">
               Patterns
             </a>
+            <Link to="/blog" className="hover:text-[#1F1F1F] transition-colors">
+              Blog
+            </Link>
             <a href="#pricing-offer" onClick={(e) => { e.preventDefault(); scrollToSection('pricing-offer'); }} className="hover:text-[#1F1F1F] transition-colors">
               Get the Guide ($12)
             </a>
