@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Sparkles,
@@ -262,47 +261,17 @@ export default function BlanketCollectionLandingPage() {
   const activeQuiz = QUIZ_OPTIONS[selectedQuizIdx];
 
   return (
-    <div className="min-h-screen bg-[#FBF7F1] text-[#1F1F1F] font-sans antialiased selection:bg-[#2F4A3A]/15 selection:text-[#2F4A3A]">
+    <div className="bg-[#FBF7F1]">
       
       {/* ========================================================================= */}
       {/* 1) HERO SECTION */}
       {/* ========================================================================= */}
-      <header className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
+      <header className="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
         {/* Subtle decorative background glow */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#2F4A3A]/5 rounded-full blur-3xl pointer-events-none -z-10" />
         <div className="absolute top-1/3 left-10 w-80 h-80 bg-[#DFD3C3]/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Top Brand Bar */}
-          <div className="flex items-center justify-between pb-8 md:pb-12 border-b border-[#E9E1D7]/60 mb-8 md:mb-12">
-            <div className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-full bg-[#2F4A3A] text-[#FBF7F1] flex items-center justify-center font-fraunces font-bold text-sm">
-                7
-              </span>
-              <span className="font-fraunces font-semibold text-lg md:text-xl text-[#1F1F1F] tracking-tight">
-                The 7-Day Blanket Collection
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                to="/blog"
-                className="text-xs font-medium text-[#5B5B5B] hover:text-[#1F1F1F] transition-colors"
-              >
-                Blog
-              </Link>
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-[#5B5B5B] bg-[#FFFFFF] border border-[#E9E1D7] px-3 py-1 rounded-full shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#2F4A3A]" /> PDF Digital Guide
-              </span>
-              <a
-                href={CHECKOUT_URL}
-                onClick={(e) => { e.preventDefault(); handleCtaClick(); }}
-                className="text-xs font-semibold text-[#2F4A3A] hover:text-[#263C30] underline underline-offset-4"
-              >
-                Instant Access ($12)
-              </a>
-            </div>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
@@ -1283,43 +1252,6 @@ export default function BlanketCollectionLandingPage() {
 
         </div>
       </section>
-
-
-      {/* ========================================================================= */}
-      {/* FOOTER */}
-      {/* ========================================================================= */}
-      <footer className="py-10 bg-[#FFFFFF] border-t border-[#E9E1D7] text-xs text-[#5B5B5B]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-[#2F4A3A] text-[#FBF7F1] flex items-center justify-center font-fraunces font-bold text-xs">
-              7
-            </span>
-            <span className="font-fraunces font-semibold text-[#1F1F1F]">
-              The 7-Day Crochet Blanket Collection
-            </span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <a href="#whats-inside" onClick={(e) => { e.preventDefault(); scrollToSection('whats-inside'); }} className="hover:text-[#1F1F1F] transition-colors">
-              What's Inside
-            </a>
-            <a href="#the-blankets" onClick={(e) => { e.preventDefault(); scrollToSection('the-blankets'); }} className="hover:text-[#1F1F1F] transition-colors">
-              Patterns
-            </a>
-            <Link to="/blog" className="hover:text-[#1F1F1F] transition-colors">
-              Blog
-            </Link>
-            <a href="#pricing-offer" onClick={(e) => { e.preventDefault(); scrollToSection('pricing-offer'); }} className="hover:text-[#1F1F1F] transition-colors">
-              Get the Guide ($12)
-            </a>
-          </div>
-
-          <p className="text-[11px] text-[#5B5B5B]/80">
-            © {new Date().getFullYear()} All rights reserved. Digital PDF download.
-          </p>
-        </div>
-      </footer>
 
 
       {/* ========================================================================= */}

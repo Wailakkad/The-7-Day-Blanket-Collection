@@ -66,7 +66,7 @@ export default function BlogArticle() {
               Want patterns that use these stitches in a finishable way?
             </p>
             <Link
-              to="/"
+              to="/store/7-day-blanket-collection"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#2F4A3A] font-semibold text-sm hover:bg-[#FBF7F1] transition-colors no-underline shadow-sm"
             >
               Discover the Blanket Collection <ArrowRight className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function BlogArticle() {
               Ready to try these stitches in a finishable blanket?
             </p>
             <Link
-              to="/"
+              to="/store/7-day-blanket-collection"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#2F4A3A] font-semibold text-sm hover:bg-[#FBF7F1] transition-colors no-underline shadow-sm"
             >
               Discover the Blanket Collection <ArrowRight className="w-4 h-4" />
@@ -474,8 +474,8 @@ export default function BlogArticle() {
               7 beginner-friendly patterns, sizing help, straight edges, borders, and printable planners — all in one PDF.
             </p>
             <Link
-              to="/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-[#2F4A3A] font-semibold text-sm sm:text-base hover:bg-[#FBF7F1] transition-colors no-underline shadow-md"
+              to="/store/7-day-blanket-collection"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#2F4A3A] font-semibold text-sm hover:bg-[#FBF7F1] transition-colors no-underline shadow-sm"
             >
               Discover the Blanket Collection <ArrowRight className="w-4 h-4" />
             </Link>

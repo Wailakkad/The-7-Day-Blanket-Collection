@@ -1,14 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag } from 'lucide-react';
+
+const BLOG_POSTS = [
+  {
+    slug: 'crochet-blanket-stitches-guide',
+    icon: BookOpen,
+    title: 'Crochet Blanket Stitches: A Handy Guide',
+    description: 'Basic, textured, lacy, and fun stitches—plus UK vs US terms and a finishable next step.',
+    tag: 'Stitch Guide',
+    readTime: '8 min read',
+    level: 'Beginner Friendly',
+  },
+];
 
 export default function BlogIndex() {
   return (
-    <div className="py-16 md:py-24 bg-[#FBF7F1]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FBF7F1]">
 
-        {/* Page Header */}
-        <div className="text-center space-y-4 mb-14">
+      {/* Page Header */}
+      <section className="py-16 md:py-20 bg-[#FFFFFF] border-b border-[#E9E1D7]/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-3.5 py-1 rounded-full">
             <BookOpen className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
             Crochet Blog
@@ -20,51 +32,91 @@ export default function BlogIndex() {
             Beginner-friendly guides that help you choose, plan, crochet, and finish.
           </p>
         </div>
+      </section>
 
-        {/* Post Cards */}
-        <div className="space-y-6 max-w-2xl mx-auto">
+      {/* Blog Posts Grid */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-          {/* Post Card 1 */}
-          <Link
-            to="/blog/crochet-blanket-stitches-guide"
-            className="block bg-[#FFFFFF] border border-[#E9E1D7] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-[#2F4A3A]/40 transition-all no-underline group"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#2F4A3A]/10 text-[#2F4A3A] flex items-center justify-center shrink-0 mt-0.5">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h2 className="font-fraunces text-xl sm:text-2xl font-semibold text-[#1F1F1F] mb-2 group-hover:text-[#2F4A3A] transition-colors">
-                  Crochet Blanket Stitches: A Handy Guide
-                </h2>
-                <p className="text-sm sm:text-base text-[#5B5B5B] leading-relaxed mb-4">
-                  Basic, textured, lacy, and fun stitches—plus UK vs US terms and a finishable next step.
+            {BLOG_POSTS.map((post) => {
+              const Icon = post.icon;
+              return (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="block bg-[#FFFFFF] border border-[#E9E1D7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2F4A3A]/40 transition-all no-underline group h-full"
+                >
+                  <div className="p-6 sm:p-7 flex flex-col h-full">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-[#2F4A3A]/10 text-[#2F4A3A] flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-2 py-0.5 rounded-full">
+                          {post.tag}
+                        </span>
+                      </div>
+                    </div>
+                    <h2 className="font-fraunces text-xl sm:text-2xl font-semibold text-[#1F1F1F] mb-3 group-hover:text-[#2F4A3A] transition-colors leading-snug">
+                      {post.title}
+                    </h2>
+                    <p className="text-sm text-[#5B5B5B] leading-relaxed mb-5 flex-1">
+                      {post.description}
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-[#E9E1D7]/60">
+                      <div className="flex items-center gap-3 text-xs text-[#5B5B5B]">
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> {post.readTime}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Tag className="w-3 h-3" /> {post.level}
+                        </span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F4A3A] group-hover:gap-2.5 transition-all">
+                        Read <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+
+            {/* Placeholder for future posts */}
+            <div className="flex items-center justify-center bg-[#E4ECE7]/50 border border-dashed border-[#CCD9D0] rounded-2xl p-6 min-h-[280px]">
+              <div className="text-center">
+                <p className="font-fraunces text-lg font-medium text-[#5B5B5B] mb-2">
+                  More guides coming soon
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F4A3A] group-hover:gap-2.5 transition-all">
-                  Read the guide <ArrowRight className="w-4 h-4" />
-                </span>
+                <p className="text-sm text-[#5B5B5B]/70">
+                  Yarn selection, sizing, borders, and more.
+                </p>
               </div>
             </div>
-          </Link>
 
+          </div>
         </div>
+      </section>
 
-        {/* CTA Strip */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-[#E4ECE7] border border-[#CCD9D0] rounded-2xl px-6 py-5">
-            <p className="font-fraunces text-base sm:text-lg font-medium text-[#2F4A3A] mb-3">
+      {/* CTA Strip */}
+      <section className="py-16 md:py-20 bg-[#FFFFFF]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-[#E4ECE7] border border-[#CCD9D0] rounded-3xl p-8 sm:p-12">
+            <p className="font-fraunces text-xl sm:text-2xl font-semibold text-[#2F4A3A] mb-3">
               Want 7 finishable blanket patterns?
             </p>
+            <p className="text-sm text-[#5B5B5B] mb-6 max-w-md mx-auto">
+              Put these stitches into practice with our complete collection of beginner-friendly blanket patterns.
+            </p>
             <Link
-              to="/"
+              to="/store/7-day-blanket-collection"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#2F4A3A] text-white font-semibold text-sm hover:bg-[#263C30] transition-colors no-underline shadow-sm"
             >
               Discover the Blanket Collection <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-
-      </div>
+      </section>
     </div>
   );
 }
