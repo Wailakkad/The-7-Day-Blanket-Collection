@@ -11,6 +11,7 @@ const BLOG_POSTS = [
     tag: 'Stitch Guide',
     readTime: '8 min read',
     level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183221/Section_Image_Basic_Crochet_Stitches.jpg',
   },
 ];
 
@@ -47,17 +48,19 @@ export default function BlogIndex() {
                   to={`/blog/${post.slug}`}
                   className="block bg-[#FFFFFF] border border-[#E9E1D7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2F4A3A]/40 transition-all no-underline group h-full"
                 >
-                  <div className="p-6 sm:p-7 flex flex-col h-full">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#2F4A3A]/10 text-[#2F4A3A] flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-2 py-0.5 rounded-full">
-                          {post.tag}
-                        </span>
-                      </div>
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-2.5 py-1 rounded-full shadow-sm">
+                        {post.tag}
+                      </span>
                     </div>
+                  </div>
+                  <div className="p-6 sm:p-7 flex flex-col h-full">
                     <h2 className="font-fraunces text-xl sm:text-2xl font-semibold text-[#1F1F1F] mb-3 group-hover:text-[#2F4A3A] transition-colors leading-snug">
                       {post.title}
                     </h2>
