@@ -11,7 +11,7 @@ export default function BlogArticleSizes() {
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
         <img
-          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/1.jpg"
+          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939225/Folded_crochet_blanket_on_linen_2K_202609090928.jpg"
           alt="Crochet blanket size chart and yarn yardage guide"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
@@ -77,7 +77,7 @@ export default function BlogArticleSizes() {
 
           {/* IMAGE 1 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/2.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939228/Measuring_folded_handmade_croche__2K_202609090932.jpg"
             alt="Folded crochet blanket with measuring tape on linen background — planning blanket sizes"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -148,7 +148,7 @@ export default function BlogArticleSizes() {
 
           {/* IMAGE 2 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796124/3.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939228/Crochet_blanket_in_progress_2K_202609090928.jpg"
             alt="Flat lay of a partially crocheted blanket with hook and yarn skeins — planning yardage"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -250,7 +250,7 @@ export default function BlogArticleSizes() {
 
           {/* IMAGE 3 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/4.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939240/Measuring_crochet_swatch_gauge_2K_202609090932.jpg"
             alt="Close-up of crochet swatch with ruler showing gauge and texture"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -343,7 +343,7 @@ export default function BlogArticleSizes() {
 
           {/* IMAGE 4 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/6.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939227/Folded_handmade_crochet_blankets_2K_202609090929.jpg"
             alt="Stack of folded crochet blankets in different neutral tones — giftable blanket look"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"

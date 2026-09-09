@@ -7,6 +7,8 @@ import BlogIndex from './pages/BlogIndex';
 import BlogArticle from './pages/BlogArticle';
 import BlogArticleSizes from './pages/BlogArticleSizes';
 import BlogArticlePatterns from './pages/BlogArticlePatterns';
+import BlogArticleBabyBlanket from './pages/BlogArticleBabyBlanket';
+import BlogArticleBabyGuide from './pages/BlogArticleBabyGuide';
 import StorePage from './pages/StorePage';
 import BlanketCollectionLandingPage from './components/BlanketCollectionLandingPage';
 
@@ -21,6 +23,8 @@ export default function App() {
         <Route path="/blog/crochet-blanket-stitches-guide" element={<BlogArticle />} />
         <Route path="/blog/crochet-blanket-sizes-yarn-yardage-chart" element={<BlogArticleSizes />} />
         <Route path="/blog/how-to-read-crochet-blanket-pattern" element={<BlogArticlePatterns />} />
+        <Route path="/blog/baby-blanket-crochet-stitch-patterns" element={<BlogArticleBabyBlanket />} />
+        <Route path="/blog/baby-blanket-crochet-complete-guide" element={<BlogArticleBabyGuide />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/store/:slug" element={<BlanketCollectionLandingPage />} />
       </Routes>

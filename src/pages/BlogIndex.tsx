@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart } from 'lucide-react';
 
 const BLOG_POSTS = [
   {
@@ -21,7 +21,7 @@ const BLOG_POSTS = [
     tag: 'Size Guide',
     readTime: '10 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/1.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939225/Folded_crochet_blanket_on_linen_2K_202609090928.jpg',
   },
   {
     slug: 'how-to-read-crochet-blanket-pattern',
@@ -31,7 +31,27 @@ const BLOG_POSTS = [
     tag: 'Pattern Guide',
     readTime: '12 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/20.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939660/Crochet_pattern_and_yarn_arrange__2K_202609090930.jpg',
+  },
+  {
+    slug: 'baby-blanket-crochet-stitch-patterns',
+    icon: Baby,
+    title: '25 Baby Blanket Crochet Stitch Patterns',
+    description: 'Browse 25 baby blanket crochet stitch patterns with warmth + stretch ratings so you can pick the right stitch fast.',
+    tag: 'Baby Blankets',
+    readTime: '18 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939227/Folded_handmade_crochet_blankets_2K_202609090929.jpg',
+  },
+  {
+    slug: 'baby-blanket-crochet-complete-guide',
+    icon: Heart,
+    title: 'Baby Blanket Crochet: The Complete Start-to-Finish Guide',
+    description: 'From yarn pick-up to gift-ready finish — supplies, sizing, 7-step build method, 10 border options, and a finishing checklist.',
+    tag: 'Baby Blankets',
+    readTime: '22 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788952216/Featured_Image_hero_banner_image.jpg',
   },
 ];
 

@@ -11,7 +11,7 @@ export default function BlogArticlePatterns() {
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
         <img
-          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/20.jpg"
+          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939660/Crochet_pattern_and_yarn_arrange__2K_202609090930.jpg"
           alt="How to read a crochet blanket pattern — beginner cheat sheet"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
@@ -96,7 +96,7 @@ export default function BlogArticlePatterns() {
 
           {/* IMAGE 1 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/21.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939661/Crochet_pattern_flat_lay_2K_202609090930.jpg"
             alt="Printed crochet pattern page with hook and yarn on linen background"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -242,7 +242,7 @@ export default function BlogArticlePatterns() {
 
           {/* IMAGE 2 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796124/3.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939659/Crochet_hook_working_yarn_chain_2K_202609090930.jpg"
             alt="Starting chain and first row close-up showing stitch multiples concept"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -356,7 +356,7 @@ export default function BlogArticlePatterns() {
 
           {/* IMAGE 3 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/13.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939659/Crochet_blanket_edge_with_marker_2K_202609090931.jpg"
             alt="Blanket edge close-up with stitch marker highlighting first and last stitch"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -406,7 +406,7 @@ export default function BlogArticlePatterns() {
 
           {/* IMAGE 4 */}
           <img
-            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/21.jpg"
+            src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939656/Crochet_blanket_border_corner_turn_2K_202609090931.jpg"
             alt="Border close-up showing neat crochet blanket corners with single crochet edge"
             loading="lazy"
             className="w-full rounded-2xl border border-[#E9E1D7]"
