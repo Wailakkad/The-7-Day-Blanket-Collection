@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye } from 'lucide-react';
 
 const BLOG_POSTS = [
   {
@@ -12,6 +12,26 @@ const BLOG_POSTS = [
     readTime: '8 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183221/Section_Image_Basic_Crochet_Stitches.jpg',
+  },
+  {
+    slug: 'crochet-blanket-sizes-yarn-yardage-chart',
+    icon: Calculator,
+    title: 'Crochet Blanket Sizes + Yarn Yardage Calculator',
+    description: 'Use this crochet blanket size chart + yarn yardage estimates by yarn weight so you don\'t run out of yarn. Throw to king sizes included.',
+    tag: 'Size Guide',
+    readTime: '10 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/1.jpg',
+  },
+  {
+    slug: 'how-to-read-crochet-blanket-pattern',
+    icon: Eye,
+    title: 'How to Read ANY Crochet Blanket Pattern',
+    description: 'Beginner cheat sheet with stitch multiples, pattern repeats, and stitch count fixes to stop frogging.',
+    tag: 'Pattern Guide',
+    readTime: '12 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788796123/20.jpg',
   },
 ];
 
