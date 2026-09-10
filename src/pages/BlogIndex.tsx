@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers } from 'lucide-react';
 
 const BLOG_POSTS = [
   {
@@ -52,6 +52,16 @@ const BLOG_POSTS = [
     readTime: '22 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788952216/Featured_Image_hero_banner_image.jpg',
+  },
+  {
+    slug: 'crochet-stitch-patterns',
+    icon: Layers,
+    title: 'Crochet Stitch Patterns: 27 Textured Stitches That Look Expensive',
+    description: 'Discover 27 textured crochet stitches, including easy crochet stitches for beginners and bold statement textures for blankets, scarves, and more.',
+    tag: 'Stitch Guide',
+    readTime: '20 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
   },
 ];
 
