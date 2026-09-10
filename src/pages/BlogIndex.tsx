@@ -1,12 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3 } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors } from 'lucide-react';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Posts', icon: Grid3X3 },
   { id: 'crochet-stitches', label: 'Crochet Stitches', icon: BookOpen },
   { id: 'blanket', label: 'Blanket', icon: Layers },
   { id: 'baby-crochet', label: 'Baby Crochet', icon: Baby },
+  { id: 'hats', label: 'Hats', icon: Scissors },
 ] as const;
 
 type CategoryId = typeof CATEGORIES[number]['id'];
@@ -77,6 +78,17 @@ const BLOG_POSTS = [
     readTime: '20 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
+  },
+  {
+    slug: 'crochet-hats-free-pattern',
+    icon: Scissors,
+    title: 'Crochet Hats Free Pattern: 25 Free Beanie Crochet Pattern Ideas',
+    description: 'Explore 25 free beanie crochet pattern ideas plus tips to choose the right yarn, fit, and texture.',
+    tag: 'Pattern Guide',
+    category: 'hats' as CategoryId,
+    readTime: '25 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183221/Section_Image_Basic_Crochet_Stitches.jpg',
   },
 ];
 
