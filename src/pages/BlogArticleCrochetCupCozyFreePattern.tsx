@@ -314,10 +314,15 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
           {/* Hero Image */}
           <button
             type="button"
-            onClick={() => openLightbox('hero-cup-cozy', 'Collection of crocheted cup cozies in various styles and colors')}
+            onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg', 'Collection of crocheted cup cozies in various styles and colors')}
             className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
           >
-            <HeroCupCozy />
+            <img
+              src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg"
+              alt="Collection of crocheted cup cozies in various styles and colors"
+              loading="lazy"
+              className="w-full rounded-2xl border border-[#E9E1D7]"
+            />
             <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
               <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
             </span>
