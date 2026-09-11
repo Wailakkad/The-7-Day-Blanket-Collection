@@ -100,7 +100,7 @@ const BLOG_POSTS = [
     category: 'cups' as CategoryId,
     readTime: '18 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg',
   },
 ];
 

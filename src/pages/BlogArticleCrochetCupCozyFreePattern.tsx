@@ -256,9 +256,12 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
-        <div className="absolute inset-0">
-          <HeroCupCozy />
-        </div>
+        <img
+          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg"
+          alt="Collection of crocheted cup cozies in various styles and colors"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center w-full">
           <Link
