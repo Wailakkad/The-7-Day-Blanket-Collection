@@ -202,44 +202,45 @@ interface CupCozyIdea {
   tip: string;
   pattern: 'sc' | 'rib' | 'waffle' | 'moss' | 'shell' | 'stripe' | 'granny' | 'bobble' | 'vstitch' | 'chevron' | 'cable' | 'mesh' | 'twist' | 'puff' | 'seed' | 'half' | 'lemon' | 'bow' | 'button' | 'colorblock' | 'handle';
   colors: string[];
+  image: string;
 }
 
 const EASY_COZIES: CupCozyIdea[] = [
-  { name: 'Classic Single Crochet Sleeve', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Standard paper cups', why: 'The simplest cozy you can make — a flat rectangle seamed into a tube. Works up in 20 minutes.', tip: 'Chain to match cup circumference minus 1" for negative ease. Seam with whip stitch for a clean edge.', pattern: 'sc', colors: ['#2F4A3A'] },
-  { name: 'Ribbed BLO Cozy', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Travel cups + tumblers', why: 'BLO ribbing stretches to fit snugly on any cup — the most forgiving pattern for beginners.', tip: 'Work in BLO HDC rows. The ribbing stretches horizontally, so make it 1" shorter than circumference.', pattern: 'rib', colors: ['#2F4A3A', '#4A7A5E'] },
-  { name: 'Half Double Crochet Wrap', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Paper + plastic cups', why: 'Slightly faster than SC with a softer drape — the goldilocks of cozy stitches.', tip: 'HDC naturally creates a subtle ridge. Use that texture on the brim for a polished look.', pattern: 'half', colors: ['#2F4A3A'] },
-  { name: 'Color Block Sleeve', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Gift sets + party favors', why: 'Two-tone color blocking looks modern with zero complex stitches — great for using scrap yarn.', tip: 'Switch colors at the halfway point. Carry the unused yarn inside instead of cutting.', pattern: 'colorblock', colors: ['#2F4A3A', '#E07A5F'] },
-  { name: 'Stripe Stack Cozy', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Iced coffee cups', why: 'Horizontal stripes make a basic pattern look custom — use 2-3 coordinating colors.', tip: 'Carry the unused color up the inside instead of cutting — saves weaving in ends.', pattern: 'stripe', colors: ['#2F4A3A', '#E9E1D7'] },
+  { name: 'Classic Single Crochet Sleeve', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Standard paper cups', why: 'The simplest cozy you can make — a flat rectangle seamed into a tube. Works up in 20 minutes.', tip: 'Chain to match cup circumference minus 1" for negative ease. Seam with whip stitch for a clean edge.', pattern: 'sc', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120233/Classic_Single_Crochet_Sleeve.jpg' },
+  { name: 'Ribbed BLO Cozy', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Travel cups + tumblers', why: 'BLO ribbing stretches to fit snugly on any cup — the most forgiving pattern for beginners.', tip: 'Work in BLO HDC rows. The ribbing stretches horizontally, so make it 1" shorter than circumference.', pattern: 'rib', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120232/Ribbed_BLO_Cozy.jpg' },
+  { name: 'Half Double Crochet Wrap', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Paper + plastic cups', why: 'Slightly faster than SC with a softer drape — the goldilocks of cozy stitches.', tip: 'HDC naturally creates a subtle ridge. Use that texture on the brim for a polished look.', pattern: 'half', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120234/Half_Double_Crochet_Wrap.jpg' },
+  { name: 'Color Block Sleeve', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Gift sets + party favors', why: 'Two-tone color blocking looks modern with zero complex stitches — great for using scrap yarn.', tip: 'Switch colors at the halfway point. Carry the unused yarn inside instead of cutting.', pattern: 'colorblock', colors: ['#2F4A3A', '#E07A5F'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120232/Color_Block_Sleeve.jpg' },
+  { name: 'Stripe Stack Cozy', level: 'Beginner', yarn: '#4 cotton', bestFor: 'Iced coffee cups', why: 'Horizontal stripes make a basic pattern look custom — use 2-3 coordinating colors.', tip: 'Carry the unused color up the inside instead of cutting — saves weaving in ends.', pattern: 'stripe', colors: ['#2F4A3A', '#E9E1D7'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120231/Stripe_Stack_Cozy.jpg' },
 ];
 
 const TEXTURED_COZIES: CupCozyIdea[] = [
-  { name: 'Waffle Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs', why: 'Deep waffle texture that looks store-bought — squishy, warm, and tactile.', tip: 'Front-post DC creates the raised ridges. The pattern repeats every 2 rows — count carefully.', pattern: 'waffle', colors: ['#2F4A3A', '#4A7A5E'] },
-  { name: 'Moss Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Any cup type', why: 'Woven-look texture that\'s modern, clean, and reversible — hides small tension changes.', tip: 'The SC+CH1 skip 1 repeat is very forgiving. Great first textured project.', pattern: 'moss', colors: ['#2F4A3A', '#4A7A5E'] },
-  { name: 'Seed Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Subtle nubby texture that looks elegant in solid colors — perfect for gifting.', tip: 'Alternate SC and DC, offsetting each row. The texture builds naturally.', pattern: 'seed', colors: ['#2F4A3A', '#4A7A5E'] },
-  { name: 'Shell Stitch Cozy', level: 'Easy', yarn: '#3 DK cotton', bestFor: 'Iced coffee + smoothies', why: 'Scalloped edge adds a feminine, boutique touch — looks more complex than it is.', tip: 'Work shells into the foundation chain for a decorative bottom edge.', pattern: 'shell', colors: ['#2F4A3A'] },
-  { name: 'V-Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Travel cups', why: 'Open V-stitch creates a lacy, breathable fabric — great for iced drinks where condensation forms.', tip: 'The V-stitch pattern repeats every 2 stitches — easy to adjust for any cup size.', pattern: 'vstitch', colors: ['#2F4A3A'] },
-  { name: 'Lemon Peel Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gifting', why: 'Overlapping bumps create a magical, textured surface — eye-catching in any color.', tip: 'Alternate SC and DC in the same stitch, then skip one. The texture builds with each row.', pattern: 'lemon', colors: ['#2F4A3A', '#4A7A5E'] },
+  { name: 'Waffle Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs', why: 'Deep waffle texture that looks store-bought — squishy, warm, and tactile.', tip: 'Front-post DC creates the raised ridges. The pattern repeats every 2 rows — count carefully.', pattern: 'waffle', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120227/Waffle_Stitch_Cozy.jpg' },
+  { name: 'Moss Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Any cup type', why: 'Woven-look texture that\'s modern, clean, and reversible — hides small tension changes.', tip: 'The SC+CH1 skip 1 repeat is very forgiving. Great first textured project.', pattern: 'moss', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120221/Moss_Stitch_Cozy.jpg' },
+  { name: 'Seed Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Subtle nubby texture that looks elegant in solid colors — perfect for gifting.', tip: 'Alternate SC and DC, offsetting each row. The texture builds naturally.', pattern: 'seed', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120221/Seed_Stitch_Cozy.jpg' },
+  { name: 'Shell Stitch Cozy', level: 'Easy', yarn: '#3 DK cotton', bestFor: 'Iced coffee + smoothies', why: 'Scalloped edge adds a feminine, boutique touch — looks more complex than it is.', tip: 'Work shells into the foundation chain for a decorative bottom edge.', pattern: 'shell', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120221/Shell_Stitch_Cozy.jpg' },
+  { name: 'V-Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Travel cups', why: 'Open V-stitch creates a lacy, breathable fabric — great for iced drinks where condensation forms.', tip: 'The V-stitch pattern repeats every 2 stitches — easy to adjust for any cup size.', pattern: 'vstitch', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120220/V-Stitch_Cozy.jpg' },
+  { name: 'Lemon Peel Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gifting', why: 'Overlapping bumps create a magical, textured surface — eye-catching in any color.', tip: 'Alternate SC and DC in the same stitch, then skip one. The texture builds with each row.', pattern: 'lemon', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120221/Lemon_Peel_Stitch_Cozy.jpg' },
 ];
 
 const HANDLE_COZIES: CupCozyIdea[] = [
-  { name: 'Button Tab Handle Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Mugs with handles', why: 'The button tab wraps around the handle for a secure, adjustable fit — no sliding.', tip: 'Add the button tab 2 rows before finishing. Position it where the handle meets the cup.', pattern: 'button', colors: ['#2F4A3A'] },
-  { name: 'Handle Cutout Sleeve', level: 'Easy', yarn: '#4 cotton', bestFor: 'Mugs with handles', why: 'A strategic opening lets the handle poke through — snug fit that stays put.', tip: 'Leave a 1.5" gap in the center of the cozy for the handle. Reinforce edges with SC.', pattern: 'handle', colors: ['#2F4A3A'] },
-  { name: 'Tie-String Wrap', level: 'Beginner', yarn: '#3 DK cotton', bestFor: 'Any cup with handle', why: 'Tie strings secure the cozy around the handle — adjustable and decorative.', tip: 'Add chain-50 ties at each end. Wrap around the handle and tie in a bow.', pattern: 'sc', colors: ['#2F4A3A'] },
-  { name: 'Moss Stitch Handle Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs', why: 'Modern woven texture with a handle opening — looks clean and stays in place.', tip: 'Work the moss stitch flat, leave a handle gap, then seam the bottom.', pattern: 'moss', colors: ['#2F4A3A', '#4A7A5E'] },
+  { name: 'Button Tab Handle Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Mugs with handles', why: 'The button tab wraps around the handle for a secure, adjustable fit — no sliding.', tip: 'Add the button tab 2 rows before finishing. Position it where the handle meets the cup.', pattern: 'button', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120215/Button_Tab_Handle_Cozy.jpg' },
+  { name: 'Handle Cutout Sleeve', level: 'Easy', yarn: '#4 cotton', bestFor: 'Mugs with handles', why: 'A strategic opening lets the handle poke through — snug fit that stays put.', tip: 'Leave a 1.5" gap in the center of the cozy for the handle. Reinforce edges with SC.', pattern: 'handle', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120216/Handle_Cutout_Sleeve.jpg' },
+  { name: 'Tie-String Wrap', level: 'Beginner', yarn: '#3 DK cotton', bestFor: 'Any cup with handle', why: 'Tie strings secure the cozy around the handle — adjustable and decorative.', tip: 'Add chain-50 ties at each end. Wrap around the handle and tie in a bow.', pattern: 'sc', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120213/Tie-String_Wrap.jpg' },
+  { name: 'Moss Stitch Handle Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs', why: 'Modern woven texture with a handle opening — looks clean and stays in place.', tip: 'Work the moss stitch flat, leave a handle gap, then seam the bottom.', pattern: 'moss', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120213/Moss_Stitch_Handle_Cozy.jpg' },
 ];
 
 const MODERN_COZIES: CupCozyIdea[] = [
-  { name: 'Mesh Sleeve', level: 'Easy', yarn: '#3 DK cotton', bestFor: 'Iced coffee + cold brew', why: 'Open mesh looks minimal and modern — breathable for cold drinks with condensation.', tip: 'Chain multiples of 2 for the foundation. The mesh pattern is just chains and SC.', pattern: 'mesh', colors: ['#2F4A3A'] },
-  { name: 'Twist Stitch Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Continuous twist creates a sculptural, modern look — people will ask where you bought it.', tip: 'The twist is just front-post and back-post DC alternating. Practice on a swatch first.', pattern: 'twist', colors: ['#2F4A3A'] },
-  { name: 'Chevron Stripe Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Travel cups + tumblers', why: 'Wavy chevron stripes look modern and playful — great for matching sets.', tip: 'The chevron pattern repeats every 12 stitches. Use stitch markers to track the peaks.', pattern: 'chevron', colors: ['#2F4A3A', '#E9E1D7'] },
-  { name: 'Bobble Dot Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gifting', why: 'Raised bobbles in a grid pattern — tactile, playful, and surprisingly easy.', tip: 'Push each bobble to the front as you make it. Space them evenly with SC between.', pattern: 'bobble', colors: ['#2F4A3A'] },
+  { name: 'Mesh Sleeve', level: 'Easy', yarn: '#3 DK cotton', bestFor: 'Iced coffee + cold brew', why: 'Open mesh looks minimal and modern — breathable for cold drinks with condensation.', tip: 'Chain multiples of 2 for the foundation. The mesh pattern is just chains and SC.', pattern: 'mesh', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120212/Mesh_Sleeve.jpg' },
+  { name: 'Twist Stitch Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Continuous twist creates a sculptural, modern look — people will ask where you bought it.', tip: 'The twist is just front-post and back-post DC alternating. Practice on a swatch first.', pattern: 'twist', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120212/Twist_Stitch_Cozy.jpg' },
+  { name: 'Chevron Stripe Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Travel cups + tumblers', why: 'Wavy chevron stripes look modern and playful — great for matching sets.', tip: 'The chevron pattern repeats every 12 stitches. Use stitch markers to track the peaks.', pattern: 'chevron', colors: ['#2F4A3A', '#E9E1D7'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120206/Chevron_Stripe_Cozy.jpg' },
+  { name: 'Bobble Dot Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gifting', why: 'Raised bobbles in a grid pattern — tactile, playful, and surprisingly easy.', tip: 'Push each bobble to the front as you make it. Space them evenly with SC between.', pattern: 'bobble', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120207/Bobble_Dot_Cozy.jpg' },
 ];
 
 const GIFTABLE_COZIES: CupCozyIdea[] = [
-  { name: 'Granny Square Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Gift sets + craft fairs', why: 'Classic granny clusters in a tube — nostalgic, colorful, and instantly recognizable.', tip: 'Use 3 DC clusters. The granny pattern is forgiving and works with any color combo.', pattern: 'granny', colors: ['#2F4A3A', '#E07A5F'] },
-  { name: 'Puff Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Puffy texture feels luxurious — looks like a high-end boutique cozy.', tip: 'Yarn over and pull up 3 times per puff. The puffier the yarn, the fewer puffs you need.', pattern: 'puff', colors: ['#2F4A3A'] },
-  { name: 'Bow Accent Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Gift sets + parties', why: 'A cute bow on the front makes this instantly Instagram-worthy — perfect for gifting.', tip: 'Crochet the bow separately and sew it on. Easier than trying to work it into the cozy.', pattern: 'bow', colors: ['#2F4A3A', '#E07A5F'] },
-  { name: 'Cable Knit Look Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + men\'s gifts', why: 'Aran-style cables without a cable hook — looks complicated but uses basic stitches.', tip: 'Skip 2, DC in next 2, go back and DC in the skipped stitches — instant faux cable.', pattern: 'cable', colors: ['#2F4A3A', '#4A7A5E'] },
+  { name: 'Granny Square Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Gift sets + craft fairs', why: 'Classic granny clusters in a tube — nostalgic, colorful, and instantly recognizable.', tip: 'Use 3 DC clusters. The granny pattern is forgiving and works with any color combo.', pattern: 'granny', colors: ['#2F4A3A', '#E07A5F'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120204/Granny_Square_Cozy.jpg' },
+  { name: 'Puff Stitch Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Ceramic mugs + gift sets', why: 'Puffy texture feels luxurious — looks like a high-end boutique cozy.', tip: 'Yarn over and pull up 3 times per puff. The puffier the yarn, the fewer puffs you need.', pattern: 'puff', colors: ['#2F4A3A'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120205/Puff_Stitch_Cozy.jpg' },
+  { name: 'Bow Accent Cozy', level: 'Easy', yarn: '#4 cotton', bestFor: 'Gift sets + parties', why: 'A cute bow on the front makes this instantly Instagram-worthy — perfect for gifting.', tip: 'Crochet the bow separately and sew it on. Easier than trying to work it into the cozy.', pattern: 'bow', colors: ['#2F4A3A', '#E07A5F'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120205/Bow_Accent_Cozy.jpg' },
+  { name: 'Cable Knit Look Cozy', level: 'Intermediate', yarn: '#4 cotton', bestFor: 'Ceramic mugs + men\'s gifts', why: 'Aran-style cables without a cable hook — looks complicated but uses basic stitches.', tip: 'Skip 2, DC in next 2, go back and DC in the skipped stitches — instant faux cable.', pattern: 'cable', colors: ['#2F4A3A', '#4A7A5E'], image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120204/Cable_Knit_Look_Cozy.jpg' },
 ];
 
 /* ─── Main Component ─── */
@@ -346,12 +347,30 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
 
           {/* Quick Picks Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <CozyGridImage pattern="sc" colors={['#2F4A3A']} label="Classic SC" />
-            <CozyGridImage pattern="rib" colors={['#2F4A3A', '#4A7A5E']} label="Ribbed BLO" />
-            <CozyGridImage pattern="waffle" colors={['#2F4A3A', '#4A7A5E']} label="Waffle" />
-            <CozyGridImage pattern="button" colors={['#2F4A3A']} label="Button Tab" />
-            <CozyGridImage pattern="bow" colors={['#2F4A3A', '#E07A5F']} label="Bow Accent" />
-            <CozyGridImage pattern="moss" colors={['#2F4A3A', '#4A7A5E']} label="Moss Stitch" />
+            {[
+              { name: 'Classic SC', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120233/Classic_Single_Crochet_Sleeve.jpg' },
+              { name: 'Ribbed BLO', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120232/Ribbed_BLO_Cozy.jpg' },
+              { name: 'Waffle', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120227/Waffle_Stitch_Cozy.jpg' },
+              { name: 'Button Tab', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120215/Button_Tab_Handle_Cozy.jpg' },
+              { name: 'Bow Accent', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120205/Bow_Accent_Cozy.jpg' },
+              { name: 'Moss Stitch', image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789120221/Moss_Stitch_Cozy.jpg' },
+            ].map((item) => (
+              <div key={item.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => openLightbox(item.image, `${item.name} crochet cup cozy`)}
+                  className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+                >
+                  <img src={item.image} alt={`${item.name.toLowerCase()} crochet cup cozy`} loading="lazy" className="w-full" />
+                  <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                  </span>
+                </button>
+                <div className="px-3 py-2.5 text-center">
+                  <p className="text-xs font-semibold text-[#1F1F1F] leading-tight">{item.name}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Yarn Guide */}
@@ -443,10 +462,10 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
                 <div key={p.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
                   <button
                     type="button"
-                    onClick={() => openLightbox(`easy-${p.name}`, `${p.name} crochet cup cozy`)}
+                    onClick={() => openLightbox(p.image, `${p.name} crochet cup cozy`)}
                     className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
                   >
-                    <CozyGridImage pattern={p.pattern} colors={p.colors} label={p.name} />
+                    <img src={p.image} alt={`${p.name.toLowerCase()} crochet cup cozy`} loading="lazy" className="w-full" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </span>
@@ -487,10 +506,10 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
                 <div key={p.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
                   <button
                     type="button"
-                    onClick={() => openLightbox(`textured-${p.name}`, `${p.name} crochet coffee cozy`)}
+                    onClick={() => openLightbox(p.image, `${p.name} crochet coffee cozy`)}
                     className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
                   >
-                    <CozyGridImage pattern={p.pattern} colors={p.colors} label={p.name} />
+                    <img src={p.image} alt={`${p.name.toLowerCase()} crochet coffee cozy`} loading="lazy" className="w-full" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </span>
@@ -544,10 +563,10 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
                 <div key={p.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
                   <button
                     type="button"
-                    onClick={() => openLightbox(`handle-${p.name}`, `${p.name} crochet mug cozy with handle`)}
+                    onClick={() => openLightbox(p.image, `${p.name} crochet mug cozy with handle`)}
                     className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
                   >
-                    <CozyGridImage pattern={p.pattern} colors={p.colors} label={p.name} />
+                    <img src={p.image} alt={`${p.name.toLowerCase()} crochet mug cozy with handle`} loading="lazy" className="w-full" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </span>
@@ -588,10 +607,10 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
                 <div key={p.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
                   <button
                     type="button"
-                    onClick={() => openLightbox(`modern-${p.name}`, `${p.name} modern crochet cup cozy`)}
+                    onClick={() => openLightbox(p.image, `${p.name} modern crochet cup cozy`)}
                     className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
                   >
-                    <CozyGridImage pattern={p.pattern} colors={p.colors} label={p.name} />
+                    <img src={p.image} alt={`${p.name.toLowerCase()} modern crochet cup cozy`} loading="lazy" className="w-full" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </span>
@@ -632,10 +651,10 @@ export default function BlogArticleCrochetCupCozyFreePattern() {
                 <div key={p.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
                   <button
                     type="button"
-                    onClick={() => openLightbox(`gift-${p.name}`, `${p.name} giftable crochet cup cozy`)}
+                    onClick={() => openLightbox(p.image, `${p.name} giftable crochet cup cozy`)}
                     className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
                   >
-                    <CozyGridImage pattern={p.pattern} colors={p.colors} label={p.name} />
+                    <img src={p.image} alt={`${p.name.toLowerCase()} giftable crochet cup cozy`} loading="lazy" className="w-full" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </span>
