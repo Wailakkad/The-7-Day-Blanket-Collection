@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors, Coffee } from 'lucide-react';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Posts', icon: Grid3X3 },
@@ -8,6 +8,7 @@ const CATEGORIES = [
   { id: 'blanket', label: 'Blanket', icon: Layers },
   { id: 'baby-crochet', label: 'Baby Crochet', icon: Baby },
   { id: 'hats', label: 'Hats', icon: Scissors },
+  { id: 'cups', label: 'Cups & Mugs', icon: Coffee },
 ] as const;
 
 type CategoryId = typeof CATEGORIES[number]['id'];
@@ -88,7 +89,18 @@ const BLOG_POSTS = [
     category: 'hats' as CategoryId,
     readTime: '25 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183221/Section_Image_Basic_Crochet_Stitches.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+  },
+  {
+    slug: 'crochet-cup-cozy-free-pattern',
+    icon: Coffee,
+    title: 'Crochet Cup Cozy Free Pattern: 21 Coffee Cup Cozy Crochet Pattern Free Ideas',
+    description: 'A beginner-friendly roundup of 21 cute mug and cup cozy ideas plus yarn tips and fit tricks.',
+    tag: 'Pattern Guide',
+    category: 'cups' as CategoryId,
+    readTime: '18 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
   },
 ];
 

@@ -1,49 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, CheckCircle2, ArrowRight } from 'lucide-react';
+import { BookOpen, CheckCircle2, ArrowRight, X, ZoomIn } from 'lucide-react';
 import StitchSwatch from '../components/StitchSwatch';
 
 const HERO_IMAGE = 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg';
 
 const EASY_STITCHES = [
-  { name: 'Moss Stitch (Linen Stitch)', difficulty: 'Beginner', bestFor: 'Blankets, scarves, dishcloths', tip: 'Use a hook one size smaller than the yarn label recommends for a tighter, more woven-look fabric.', swatch: 'moss' as const },
-  { name: 'Lemon Peel Stitch', difficulty: 'Beginner', bestFor: 'Baby blankets, scarves, hats', tip: 'Keep your tension even — the SC and DC alternation naturally creates texture without extra effort.', swatch: 'lemon' as const },
-  { name: 'Suzette Stitch', difficulty: 'Beginner', bestFor: 'Lightweight blankets, spring projects', tip: 'Work (SC, DC) in the same stitch, skip one — the rhythm is easy to memorize after two rows.', swatch: 'suzette' as const },
-  { name: 'Seed Stitch', difficulty: 'Beginner', bestFor: 'Scarves, washcloths, baby blankets', tip: 'Alternate SC and DC across each row, offsetting by one each row — simple but textured.', swatch: 'seed' as const },
-  { name: 'Granite Stitch (Moss + Chain)', difficulty: 'Beginner', bestFor: 'Summer blankets, market bags', tip: 'The chain spaces create breathing room — perfect for warm-weather projects.', swatch: 'granite' as const },
-  { name: 'Extended Single Crochet', difficulty: 'Beginner', bestFor: 'Dense blankets, bags, baskets', tip: 'Pull up a loop, yarn over, pull through one loop only, then complete like SC — slightly taller than standard SC.', swatch: 'sc' as const },
+  { name: 'Moss Stitch (Linen Stitch)', difficulty: 'Beginner', bestFor: 'Blankets, scarves, dishcloths', tip: 'Use a hook one size smaller than the yarn label recommends for a tighter, more woven-look fabric.', swatch: 'moss' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114590/Moss_Stitch_Linen_Stitch.jpg' },
+  { name: 'Lemon Peel Stitch', difficulty: 'Beginner', bestFor: 'Baby blankets, scarves, hats', tip: 'Keep your tension even — the SC and DC alternation naturally creates texture without extra effort.', swatch: 'lemon' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114589/Lemon_Peel_Stitch_2.jpg' },
+  { name: 'Suzette Stitch', difficulty: 'Beginner', bestFor: 'Lightweight blankets, spring projects', tip: 'Work (SC, DC) in the same stitch, skip one — the rhythm is easy to memorize after two rows.', swatch: 'suzette' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114592/Suzette_Stitch_2.jpg' },
+  { name: 'Seed Stitch', difficulty: 'Beginner', bestFor: 'Scarves, washcloths, baby blankets', tip: 'Alternate SC and DC across each row, offsetting by one each row — simple but textured.', swatch: 'seed' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114591/Seed_Stitch.jpg' },
+  { name: 'Granite Stitch (Moss + Chain)', difficulty: 'Beginner', bestFor: 'Summer blankets, market bags', tip: 'The chain spaces create breathing room — perfect for warm-weather projects.', swatch: 'granite' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114592/Granite_Stitch_Moss_Chain.jpg' },
+  { name: 'Extended Single Crochet', difficulty: 'Beginner', bestFor: 'Dense blankets, bags, baskets', tip: 'Pull up a loop, yarn over, pull through one loop only, then complete like SC — slightly taller than standard SC.', swatch: 'sc' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114590/Extended_Single_Crochet.jpg' },
 ];
 
 const BOLD_TEXTURE = [
-  { name: 'Bobble Stitch', difficulty: 'Intermediate', bestFor: 'Statement blankets, pillow covers', tip: 'Work 5 DC in the same stitch, then pull through all 6 loops on the hook — push the bobble to the front for maximum texture.', swatch: 'bobble' as const },
-  { name: 'Puff Stitch', difficulty: 'Easy', bestFor: 'Baby blankets, scarves, hats', tip: 'Yarn over and pull up a loop 3-5 times in the same stitch, then pull through all loops — the more repeats, the puffier.', swatch: 'puff' as const },
-  { name: 'Popcorn Stitch', difficulty: 'Easy', bestFor: 'Blankets, cowls, decorative edges', tip: 'Work 5 DC in the same stitch, remove hook, insert in first DC, pull the last loop through — creates a raised "pop."', swatch: 'popcorn' as const },
-  { name: 'Waffle Stitch', difficulty: 'Intermediate', bestFor: 'Thick winter blankets, hot pads', tip: 'The raised ridges use front-post DC — alternate with regular DC to form the waffle grid.', swatch: 'waffle' as const },
-  { name: 'Basketweave Stitch', difficulty: 'Intermediate', bestFor: 'Throw blankets, pillow covers', tip: 'Alternate front-post and back-post DC in blocks of 4 — the woven look comes from switching every 4 rows.', swatch: 'basketweave' as const },
-  { name: 'Crocodile Stitch', difficulty: 'Intermediate', bestFor: 'Dragon-scale bags, statement cowls', tip: 'Work pairs of DC around the post of the previous row — each scale overlaps the one below.', swatch: 'crocodile' as const },
+  { name: 'Bobble Stitch', difficulty: 'Intermediate', bestFor: 'Statement blankets, pillow covers', tip: 'Work 5 DC in the same stitch, then pull through all 6 loops on the hook — push the bobble to the front for maximum texture.', swatch: 'bobble' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789114987/Bobble_Stitch_2.jpg' },
+  { name: 'Puff Stitch', difficulty: 'Easy', bestFor: 'Baby blankets, scarves, hats', tip: 'Yarn over and pull up a loop 3-5 times in the same stitch, then pull through all loops — the more repeats, the puffier.', swatch: 'puff' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115003/Puff_Stitch_2.jpg' },
+  { name: 'Popcorn Stitch', difficulty: 'Easy', bestFor: 'Blankets, cowls, decorative edges', tip: 'Work 5 DC in the same stitch, remove hook, insert in first DC, pull the last loop through — creates a raised "pop."', swatch: 'popcorn' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115004/Popcorn_Stitch_2.jpg' },
+  { name: 'Waffle Stitch', difficulty: 'Intermediate', bestFor: 'Thick winter blankets, hot pads', tip: 'The raised ridges use front-post DC — alternate with regular DC to form the waffle grid.', swatch: 'waffle' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115004/Waffle_Stitch_2.jpg' },
+  { name: 'Basketweave Stitch', difficulty: 'Intermediate', bestFor: 'Throw blankets, pillow covers', tip: 'Alternate front-post and back-post DC in blocks of 4 — the woven look comes from switching every 4 rows.', swatch: 'basketweave' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115003/Basketweave_Stitch.jpg' },
+  { name: 'Crocodile Stitch', difficulty: 'Intermediate', bestFor: 'Dragon-scale bags, statement cowls', tip: 'Work pairs of DC around the post of the previous row — each scale overlaps the one below.', swatch: 'crocodile' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115002/Crocodile_Stitch_2.jpg' },
 ];
 
 const STRETCHY_TEXTURE = [
-  { name: 'Alpine Stitch', difficulty: 'Easy', bestFor: 'Hats, scarves, textured blankets', tip: 'Front-post DC in every other stitch creates a raised diamond pattern — keep the post stitches consistent.', swatch: 'alpine' as const },
-  { name: 'Herringbone Half Double Crochet', difficulty: 'Easy', bestFor: 'Scarves, blankets, sweaters', tip: 'Pull the first loop through the second loop on the hook immediately after yarning over — creates a slanted, woven look.', swatch: 'herringbone' as const },
-  { name: 'Ribbing (BLO HDC)', difficulty: 'Beginner', bestFor: 'Hat brims, sweater cuffs, blanket borders', tip: 'Work HDC in the back loop only — the ribbing stretches horizontally and looks knitted.', swatch: 'ribbing' as const },
-  { name: 'Thermal Stitch', difficulty: 'Intermediate', bestFor: 'Oven mitts, thick blankets, hot pads', tip: 'Work SC through both the current row and the row below — creates a double-thick, dense fabric.', swatch: 'thermal' as const },
-  { name: 'Front-Post / Back-Post Ribbing', difficulty: 'Easy', bestFor: 'Hat brims, blanket borders, cuffs', tip: 'Alternate FPDC and BPDC across the row — the more rows you do, the deeper the rib.', swatch: 'ribbing' as const },
-  { name: 'Cable-Style Stitch', difficulty: 'Intermediate', bestFor: 'Aran-style blankets, scarves, hats', tip: 'Skip stitches, work DC, then go back and DC in the skipped stitches — the cross creates a faux cable without a cable hook.', swatch: 'cable' as const },
+  { name: 'Alpine Stitch', difficulty: 'Easy', bestFor: 'Hats, scarves, textured blankets', tip: 'Front-post DC in every other stitch creates a raised diamond pattern — keep the post stitches consistent.', swatch: 'alpine' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115324/Alpine_Stitch.jpg' },
+  { name: 'Herringbone Half Double Crochet', difficulty: 'Easy', bestFor: 'Scarves, blankets, sweaters', tip: 'Pull the first loop through the second loop on the hook immediately after yarning over — creates a slanted, woven look.', swatch: 'herringbone' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115323/Herringbone_Half_Double_Crochet.jpg' },
+  { name: 'Ribbing (BLO HDC)', difficulty: 'Beginner', bestFor: 'Hat brims, sweater cuffs, blanket borders', tip: 'Work HDC in the back loop only — the ribbing stretches horizontally and looks knitted.', swatch: 'ribbing' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115323/Ribbing_BLO_HDC.jpg' },
+  { name: 'Thermal Stitch', difficulty: 'Intermediate', bestFor: 'Oven mitts, thick blankets, hot pads', tip: 'Work SC through both the current row and the row below — creates a double-thick, dense fabric.', swatch: 'thermal' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115322/Thermal_Stitch_2.jpg' },
+  { name: 'Front-Post / Back-Post Ribbing', difficulty: 'Easy', bestFor: 'Hat brims, blanket borders, cuffs', tip: 'Alternate FPDC and BPDC across the row — the more rows you do, the deeper the rib.', swatch: 'ribbing' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115321/Front-Post_Back-Post_Ribbing.jpg' },
+  { name: 'Cable-Style Stitch', difficulty: 'Intermediate', bestFor: 'Aran-style blankets, scarves, hats', tip: 'Skip stitches, work DC, then go back and DC in the skipped stitches — the cross creates a faux cable without a cable hook.', swatch: 'cable' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115323/Cable-Style_Stitch.jpg' },
 ];
 
 const MODERN_MINIMAL = [
-  { name: 'Honeycomb Stitch', difficulty: 'Intermediate', bestFor: 'Modern blankets, textured scarves', tip: 'Front-post DC and back-post DC in a specific repeat create hexagonal cells — use stitch markers to track the pattern.', swatch: 'honeycomb' as const },
-  { name: 'V-Stitch', difficulty: 'Beginner', bestFor: 'Lightweight blankets, summer throws', tip: '(DC, ch 1, DC) in the same stitch, then work into the chain spaces of the row below — fast and open.', swatch: 'vstitch' as const },
-  { name: 'Shell Stitch', difficulty: 'Easy', bestFor: 'Borders, baby blankets, shawls', tip: 'Work 5 DC in the same stitch to fan out — skip stitches between shells to keep the fabric flat.', swatch: 'shell' as const },
-  { name: 'Granny Stitch', difficulty: 'Beginner', bestFor: 'Classic blankets, scrap yarn projects', tip: 'Clusters of 3 DC with chain spaces between — the most recognizable crochet texture.', swatch: 'granny' as const },
-  { name: 'Chevron (Ripple)', difficulty: 'Easy', bestFor: 'Afghans, baby blankets, scarves', tip: 'Increase at the peaks and decrease at the valleys — count carefully to keep the zigzag even.', swatch: 'chevron' as const },
-  { name: 'Mesh Stitch', difficulty: 'Beginner', bestFor: 'Market bags, summer blankets, filet crochet', tip: '(SC, ch 2, skip 2) across — the simplest openwork pattern that works with any yarn.', swatch: 'mesh' as const },
-  { name: 'Eyelet Stitch', difficulty: 'Easy', bestFor: 'Light blankets, decorative edges, ribbons', tip: '(DC, ch 1, skip 1) creates evenly-spaced holes — perfect for threading ribbon through on baby blankets.', swatch: 'eyelet' as const },
-  { name: 'Ladder Stitch', difficulty: 'Beginner', bestFor: 'Scarves, lightweight blankets, bags', tip: 'Work SC with chain spaces in a ladder formation — the open structure makes it fast to crochet.', swatch: 'ladder' as const },
+  { name: 'Honeycomb Stitch', difficulty: 'Intermediate', bestFor: 'Modern blankets, textured scarves', tip: 'Front-post DC and back-post DC in a specific repeat create hexagonal cells — use stitch markers to track the pattern.', swatch: 'honeycomb' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115780/Honeycomb_Stitch.jpg' },
+  { name: 'V-Stitch', difficulty: 'Beginner', bestFor: 'Lightweight blankets, summer throws', tip: '(DC, ch 1, DC) in the same stitch, then work into the chain spaces of the row below — fast and open.', swatch: 'vstitch' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115778/V-Stitch.jpg' },
+  { name: 'Shell Stitch', difficulty: 'Easy', bestFor: 'Borders, baby blankets, shawls', tip: 'Work 5 DC in the same stitch to fan out — skip stitches between shells to keep the fabric flat.', swatch: 'shell' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115778/Shell_Stitch_2.jpg' },
+  { name: 'Granny Stitch', difficulty: 'Beginner', bestFor: 'Classic blankets, scrap yarn projects', tip: 'Clusters of 3 DC with chain spaces between — the most recognizable crochet texture.', swatch: 'granny' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115776/Granny_Stitch_2.jpg' },
+  { name: 'Chevron (Ripple)', difficulty: 'Easy', bestFor: 'Afghans, baby blankets, scarves', tip: 'Increase at the peaks and decrease at the valleys — count carefully to keep the zigzag even.', swatch: 'chevron' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115775/Chevron_Ripple_2.jpg' },
+  { name: 'Mesh Stitch', difficulty: 'Beginner', bestFor: 'Market bags, summer blankets, filet crochet', tip: '(SC, ch 2, skip 2) across — the simplest openwork pattern that works with any yarn.', swatch: 'mesh' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115777/Mesh_Stitch_2.jpg' },
+  { name: 'Eyelet Stitch', difficulty: 'Easy', bestFor: 'Light blankets, decorative edges, ribbons', tip: '(DC, ch 1, skip 1) creates evenly-spaced holes — perfect for threading ribbon through on baby blankets.', swatch: 'eyelet' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115774/Eyelet_Stitch_2.jpg' },
+  { name: 'Ladder Stitch', difficulty: 'Beginner', bestFor: 'Scarves, lightweight blankets, bags', tip: 'Work SC with chain spaces in a ladder formation — the open structure makes it fast to crochet.', swatch: 'ladder' as const, image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789115773/Ladder_Stitch_2.jpg' },
 ];
 
 export default function BlogArticleCrochetStitchPatterns() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const openLightbox = (src: string, alt: string) => setLightbox({ src, alt });
+  const closeLightbox = () => setLightbox(null);
+
   return (
     <article className="bg-[#FBF7F1]">
 
@@ -164,7 +168,21 @@ export default function BlogArticleCrochetStitchPatterns() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
               {EASY_STITCHES.map((s) => (
-                <StitchSwatch key={s.name} pattern={s.swatch} label={s.name} />
+                <div key={s.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => openLightbox(s.image, `${s.name} crochet stitch`)}
+                    className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+                  >
+                    <img src={s.image} alt={`${s.name.toLowerCase()} crochet stitch`} loading="lazy" className="w-full" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-xs font-semibold text-[#1F1F1F] leading-tight">{s.name}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -191,7 +209,21 @@ export default function BlogArticleCrochetStitchPatterns() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
               {BOLD_TEXTURE.map((s) => (
-                <StitchSwatch key={s.name} pattern={s.swatch} label={s.name} />
+                <div key={s.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => openLightbox(s.image, `${s.name} crochet stitch`)}
+                    className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+                  >
+                    <img src={s.image} alt={`${s.name.toLowerCase()} crochet stitch`} loading="lazy" className="w-full" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-xs font-semibold text-[#1F1F1F] leading-tight">{s.name}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -231,7 +263,21 @@ export default function BlogArticleCrochetStitchPatterns() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
               {STRETCHY_TEXTURE.map((s) => (
-                <StitchSwatch key={s.name} pattern={s.swatch} label={s.name} />
+                <div key={s.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => openLightbox(s.image, `${s.name} crochet stitch`)}
+                    className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+                  >
+                    <img src={s.image} alt={`${s.name.toLowerCase()} crochet stitch`} loading="lazy" className="w-full" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-xs font-semibold text-[#1F1F1F] leading-tight">{s.name}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -258,7 +304,21 @@ export default function BlogArticleCrochetStitchPatterns() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
               {MODERN_MINIMAL.map((s) => (
-                <StitchSwatch key={s.name} pattern={s.swatch} label={s.name} />
+                <div key={s.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => openLightbox(s.image, `${s.name} crochet stitch`)}
+                    className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+                  >
+                    <img src={s.image} alt={`${s.name.toLowerCase()} crochet stitch`} loading="lazy" className="w-full" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-xs font-semibold text-[#1F1F1F] leading-tight">{s.name}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -372,6 +432,30 @@ export default function BlogArticleCrochetStitchPatterns() {
 
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={closeLightbox}
+        >
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors cursor-pointer z-10"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
+            <p className="text-center text-white/80 text-sm mt-3">{lightbox.alt}</p>
+          </div>
+        </div>
+      )}
     </article>
   );
 }
