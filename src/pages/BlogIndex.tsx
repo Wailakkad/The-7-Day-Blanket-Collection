@@ -112,7 +112,7 @@ const BLOG_POSTS = [
     category: 'bags' as CategoryId,
     readTime: '15 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230980/HERO_top_banner_image_inside_article_hero_media.jpg',
   },
 ];
 

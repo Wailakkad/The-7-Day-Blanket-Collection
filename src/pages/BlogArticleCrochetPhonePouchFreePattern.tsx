@@ -151,9 +151,12 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
-        <div className="absolute inset-0">
-          <HeroPhonePouch />
-        </div>
+        <img
+          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230980/HERO_top_banner_image_inside_article_hero_media.jpg"
+          alt="Crochet phone pouch free pattern finished pouch with strap"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center w-full">
           <Link
@@ -206,10 +209,15 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
           {/* Hero Image */}
           <button
             type="button"
-            onClick={() => openLightbox('hero-phone-pouch', 'Crochet phone pouch free pattern finished pouch with strap')}
+            onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230976/INTRO_IMAGE_after_the_first_paragraphs.jpg', 'Crochet phone pouch free pattern finished pouch with strap')}
             className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
           >
-            <HeroPhonePouch />
+            <img
+              src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230976/INTRO_IMAGE_after_the_first_paragraphs.jpg"
+              alt="Crochet phone pouch free pattern finished pouch with strap"
+              loading="lazy"
+              className="w-full rounded-2xl border border-[#E9E1D7]"
+            />
             <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
               <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
             </span>
@@ -240,10 +248,15 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
 
             <button
               type="button"
-              onClick={() => openLightbox('size-guide', 'Crochet mobile pouch sizing guide for any phone')}
+              onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230975/Size_Guide_Section.jpg', 'Crochet mobile pouch sizing guide for any phone')}
               className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
             >
-              <SizeGuideIllustration />
+              <img
+                src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230975/Size_Guide_Section.jpg"
+                alt="Crochet mobile pouch sizing guide for any phone"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
               <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
                 <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
               </span>
