@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors, Coffee } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors, Coffee, ShoppingBag } from 'lucide-react';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Posts', icon: Grid3X3 },
@@ -9,6 +9,7 @@ const CATEGORIES = [
   { id: 'baby-crochet', label: 'Baby Crochet', icon: Baby },
   { id: 'hats', label: 'Hats', icon: Scissors },
   { id: 'cups', label: 'Cups & Mugs', icon: Coffee },
+  { id: 'bags', label: 'Bags & Pouches', icon: ShoppingBag },
 ] as const;
 
 type CategoryId = typeof CATEGORIES[number]['id'];
@@ -99,6 +100,17 @@ const BLOG_POSTS = [
     tag: 'Pattern Guide',
     category: 'cups' as CategoryId,
     readTime: '18 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg',
+  },
+  {
+    slug: 'crochet-phone-pouch-free-pattern',
+    icon: ShoppingBag,
+    title: 'Crochet Phone Pouch Free Pattern: Easy Crochet Phone Pouch That Fits Any Phone',
+    description: 'A beginner-friendly crochet phone pouch free pattern with a simple sizing method, strap options, and easy add-ons like a flap and pocket.',
+    tag: 'Pattern Guide',
+    category: 'bags' as CategoryId,
+    readTime: '15 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789122089/herobannerimage.jpg',
   },

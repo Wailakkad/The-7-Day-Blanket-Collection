@@ -13,6 +13,7 @@ import BlogArticleBabyGuide from './pages/BlogArticleBabyGuide';
 import BlogArticleCrochetStitchPatterns from './pages/BlogArticleCrochetStitchPatterns';
 import BlogArticleCrochetHatsFreePattern from './pages/BlogArticleCrochetHatsFreePattern';
 import BlogArticleCrochetCupCozyFreePattern from './pages/BlogArticleCrochetCupCozyFreePattern';
+import BlogArticleCrochetPhonePouchFreePattern from './pages/BlogArticleCrochetPhonePouchFreePattern';
 import StorePage from './pages/StorePage';
 import BlanketCollectionLandingPage from './components/BlanketCollectionLandingPage';
 
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/blog/crochet-stitch-patterns" element={<BlogArticleCrochetStitchPatterns />} />
         <Route path="/blog/crochet-hats-free-pattern" element={<BlogArticleCrochetHatsFreePattern />} />
         <Route path="/blog/crochet-cup-cozy-free-pattern" element={<BlogArticleCrochetCupCozyFreePattern />} />
+        <Route path="/blog/crochet-phone-pouch-free-pattern" element={<BlogArticleCrochetPhonePouchFreePattern />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/store/:slug" element={<BlanketCollectionLandingPage />} />
       </Routes>
