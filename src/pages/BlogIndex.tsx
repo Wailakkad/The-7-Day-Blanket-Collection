@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors, Coffee, ShoppingBag } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Calculator, Eye, Baby, Heart, Layers, Search, Grid3X3, Scissors, Coffee, ShoppingBag, Cat } from 'lucide-react';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Posts', icon: Grid3X3 },
@@ -10,6 +10,7 @@ const CATEGORIES = [
   { id: 'hats', label: 'Hats', icon: Scissors },
   { id: 'cups', label: 'Cups & Mugs', icon: Coffee },
   { id: 'bags', label: 'Bags & Pouches', icon: ShoppingBag },
+  { id: 'animals', label: 'Animals', icon: Cat },
 ] as const;
 
 type CategoryId = typeof CATEGORIES[number]['id'];
@@ -113,6 +114,28 @@ const BLOG_POSTS = [
     readTime: '15 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230980/HERO_top_banner_image_inside_article_hero_media.jpg',
+  },
+  {
+    slug: 'crochet-cat-ear-beanie',
+    icon: Cat,
+    title: 'Crochet Cat Ear Beanie',
+    description: 'A beginner-friendly tutorial for making a cozy cat ear beanie with step-by-step instructions and sizing tips.',
+    tag: 'Pattern Guide',
+    category: 'animals' as CategoryId,
+    readTime: '12 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+  },
+  {
+    slug: 'crochet-cat-hat-ideas',
+    icon: Cat,
+    title: 'Crochet Cat Hat Ideas: 17 Cat Ear Hat Crochet Pattern Styles',
+    description: 'Browse 17 cat ear hat crochet pattern styles from simple cat beanies to detailed kitty hats with whiskers.',
+    tag: 'Pattern Guide',
+    category: 'animals' as CategoryId,
+    readTime: '20 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
   },
 ];
 

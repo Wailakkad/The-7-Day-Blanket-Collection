@@ -14,6 +14,8 @@ import BlogArticleCrochetStitchPatterns from './pages/BlogArticleCrochetStitchPa
 import BlogArticleCrochetHatsFreePattern from './pages/BlogArticleCrochetHatsFreePattern';
 import BlogArticleCrochetCupCozyFreePattern from './pages/BlogArticleCrochetCupCozyFreePattern';
 import BlogArticleCrochetPhonePouchFreePattern from './pages/BlogArticleCrochetPhonePouchFreePattern';
+import BlogArticleCrochetCatEarBeanie from './pages/BlogArticleCrochetCatEarBeanie';
+import BlogArticleCrochetCatHatIdeas from './pages/BlogArticleCrochetCatHatIdeas';
 import StorePage from './pages/StorePage';
 import BlanketCollectionLandingPage from './components/BlanketCollectionLandingPage';
 
@@ -34,6 +36,8 @@ export default function App() {
         <Route path="/blog/crochet-hats-free-pattern" element={<BlogArticleCrochetHatsFreePattern />} />
         <Route path="/blog/crochet-cup-cozy-free-pattern" element={<BlogArticleCrochetCupCozyFreePattern />} />
         <Route path="/blog/crochet-phone-pouch-free-pattern" element={<BlogArticleCrochetPhonePouchFreePattern />} />
+        <Route path="/blog/crochet-cat-ear-beanie" element={<BlogArticleCrochetCatEarBeanie />} />
+        <Route path="/blog/crochet-cat-hat-ideas" element={<BlogArticleCrochetCatHatIdeas />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/store/:slug" element={<BlanketCollectionLandingPage />} />
       </Routes>
