@@ -2,143 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, ArrowRight, X, ZoomIn } from 'lucide-react';
 
-/* ─── SVG Image Components ─── */
-
-function HeroPhonePouch() {
-  return (
-    <svg viewBox="0 0 800 400" className="w-full" style={{ background: '#F5F0E8' }}>
-      <defs>
-        <linearGradient id="hp-bg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#E9E1D7" />
-          <stop offset="100%" stopColor="#FBF7F1" />
-        </linearGradient>
-      </defs>
-      <rect width="800" height="400" fill="url(#hp-bg)" />
-      {/* Phone pouch body */}
-      <rect x="280" y="60" width="240" height="280" rx="20" fill="#2F4A3A" />
-      <rect x="290" y="70" width="220" height="260" rx="14" fill="#4A7A5E" opacity="0.3" />
-      {/* Stitch texture */}
-      {[0,1,2,3,4,5,6,7,8,9,10,11,12].map(row => [0,1,2,3,4,5,6,7].map(col => (
-        <rect key={`st-${row}-${col}`} x={295+col*27} y={75+row*20} width={22} height={14} rx={3} fill="#2F4A3A" opacity={0.4 + (row+col)%2*0.15} />
-      )))}
-      {/* Phone peeking out */}
-      <rect x="310" y="40" width="180" height="30" rx="6" fill="#1F1F1F" />
-      <rect x="320" y="45" width="160" height="20" rx="3" fill="#333" />
-      <circle cx="400" cy="55" r="4" fill="#555" />
-      {/* Strap */}
-      <path d="M280,120 Q200,120 200,200 L200,350" stroke="#2F4A3A" strokeWidth="6" fill="none" strokeLinecap="round" />
-      <path d="M520,120 Q600,120 600,200 L600,350" stroke="#2F4A3A" strokeWidth="6" fill="none" strokeLinecap="round" />
-      {/* Button */}
-      <circle cx="400" cy="340" r="10" fill="#E07A5F" stroke="#FBF7F1" strokeWidth="2" />
-      <circle cx="400" cy="340" r="3" fill="#FBF7F1" />
-      {/* Title */}
-      <text x="400" y="390" textAnchor="middle" fill="#2F4A3A" fontSize="14" fontFamily="sans-serif" opacity="0.6">Crochet Phone Pouch Free Pattern</text>
-    </svg>
-  );
-}
-
-function SizeGuideIllustration() {
-  return (
-    <svg viewBox="0 0 600 300" className="w-full" style={{ background: '#FBF7F1' }}>
-      <rect width="600" height="300" fill="#FBF7F1" rx="16" />
-      {/* Phone outline */}
-      <rect x="180" y="30" width="120" height="240" rx="14" fill="none" stroke="#2F4A3A" strokeWidth="2" />
-      <rect x="190" y="45" width="100" height="200" rx="4" fill="#E9E1D7" />
-      <circle cx="240" cy="260" r="6" fill="none" stroke="#2F4A3A" strokeWidth="1.5" />
-      {/* Width arrow */}
-      <line x1="170" y1="150" x2="310" y2="150" stroke="#E07A5F" strokeWidth="2" />
-      <polygon points="165,150 175,145 175,155" fill="#E07A5F" />
-      <polygon points="315,150 305,145 305,155" fill="#E07A5F" />
-      <text x="240" y="142" textAnchor="middle" fill="#E07A5F" fontSize="11" fontFamily="sans-serif" fontWeight="600">Width + ease</text>
-      {/* Height arrow */}
-      <line x1="150" y1="30" x2="150" y2="270" stroke="#E07A5F" strokeWidth="2" />
-      <polygon points="150,25 145,35 155,35" fill="#E07A5F" />
-      <polygon points="150,275 145,265 155,265" fill="#E07A5F" />
-      <text x="135" y="155" textAnchor="middle" fill="#E07A5F" fontSize="10" fontFamily="sans-serif" fontWeight="600" transform="rotate(-90,135,155)">Height + ease</text>
-      {/* Notes */}
-      <rect x="340" y="60" width="220" height="70" rx="10" fill="#E4ECE7" />
-      <text x="450" y="85" textAnchor="middle" fill="#2F4A3A" fontSize="11" fontFamily="sans-serif" fontWeight="600">Add 0.5" ease on each side</text>
-      <text x="450" y="105" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">For phone case thickness</text>
-      <text x="450" y="120" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">Snug fit prevents sliding</text>
-      <rect x="340" y="150" width="220" height="90" rx="10" fill="#E4ECE7" />
-      <text x="450" y="175" textAnchor="middle" fill="#2F4A3A" fontSize="11" fontFamily="sans-serif" fontWeight="600">Fit Check Method</text>
-      <text x="450" y="195" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">1. Crochet base + 2 rows</text>
-      <text x="450" y="210" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">2. Place phone inside</text>
-      <text x="450" y="225" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">3. Should be snug, not tight</text>
-    </svg>
-  );
-}
-
-function PouchStepImage({ step, title, colors }: { step: string; title: string; colors: string[] }) {
-  return (
-    <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-      <svg viewBox="0 0 200 160" className="w-full" style={{ background: '#F5F0E8' }}>
-        <rect width="200" height="160" fill="#FBF7F1" />
-        {/* Pouch base */}
-        <rect x="50" y="30" width="100" height="100" rx="10" fill={colors[0]} opacity="0.8" />
-        <rect x="55" y="35" width="90" height="90" rx={colors.length > 2 ? 8 : 10} fill={colors[1] || colors[0]} opacity="0.3" />
-        {/* Stitch lines */}
-        {[0,1,2,3,4,5].map(i => (
-          <line key={i} x1="55" y1={45+i*14} x2="145" y2={45+i*14} stroke={colors[0]} strokeWidth="1.5" opacity="0.4" />
-        ))}
-        {/* Step badge */}
-        <circle cx="170" cy="25" r="16" fill={colors[0]} />
-        <text x="170" y="30" textAnchor="middle" fill="white" fontSize="12" fontFamily="sans-serif" fontWeight="bold">{step}</text>
-        <text x="100" y="150" textAnchor="middle" fill="#5B5B5B" fontSize="10" fontFamily="sans-serif">{title}</text>
-      </svg>
-    </div>
-  );
-}
-
-function StrapOptionsGrid() {
-  return (
-    <div className="grid grid-cols-2 gap-3">
-      {/* Crossbody */}
-      <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-        <svg viewBox="0 0 200 160" className="w-full" style={{ background: '#F5F0E8' }}>
-          <rect width="200" height="160" fill="#FBF7F1" />
-          <rect x="70" y="50" width="60" height="80" rx="8" fill="#2F4A3A" />
-          <path d="M70,70 Q40,70 40,100 L40,150" stroke="#2F4A3A" strokeWidth="4" fill="none" />
-          <path d="M130,70 Q160,70 160,100 L160,150" stroke="#2F4A3A" strokeWidth="4" fill="none" />
-          <text x="100" y="155" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Crossbody</text>
-        </svg>
-      </div>
-      {/* Wristlet */}
-      <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-        <svg viewBox="0 0 200 160" className="w-full" style={{ background: '#F5F0E8' }}>
-          <rect width="200" height="160" fill="#FBF7F1" />
-          <rect x="60" y="40" width="80" height="90" rx="10" fill="#2F4A3A" />
-          <path d="M140,70 Q170,70 170,90 Q170,110 140,110" stroke="#2F4A3A" strokeWidth="4" fill="none" />
-          <circle cx="170" cy="90" r="3" fill="#E07A5F" />
-          <text x="100" y="155" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Wristlet</text>
-        </svg>
-      </div>
-      {/* Adjustable */}
-      <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-        <svg viewBox="0 0 200 160" className="w-full" style={{ background: '#F5F0E8' }}>
-          <rect width="200" height="160" fill="#FBF7F1" />
-          <rect x="60" y="50" width="80" height="80" rx="10" fill="#2F4A3A" />
-          <path d="M60,70 Q30,70 30,100 L30,140" stroke="#2F4A3A" strokeWidth="4" fill="none" />
-          <path d="M140,70 Q170,70 170,100 L170,140" stroke="#2F4A3A" strokeWidth="4" fill="none" />
-          <rect x="25" y="95" width="10" height="10" rx="2" fill="#E07A5F" />
-          <rect x="165" y="95" width="10" height="10" rx="2" fill="#E07A5F" />
-          <text x="100" y="155" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Adjustable</text>
-        </svg>
-      </div>
-      {/* Button closure */}
-      <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-        <svg viewBox="0 0 200 160" className="w-full" style={{ background: '#F5F0E8' }}>
-          <rect width="200" height="160" fill="#FBF7F1" />
-          <rect x="60" y="40" width="80" height="90" rx="10" fill="#2F4A3A" />
-          <rect x="60" y="30" width="80" height="25" rx="6" fill="#4A7A5E" />
-          <circle cx="100" cy="55" r="6" fill="#E07A5F" stroke="#FBF7F1" strokeWidth="2" />
-          <text x="100" y="155" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Button Flap</text>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Main Component ─── */
 
 export default function BlogArticleCrochetPhonePouchFreePattern() {
@@ -146,13 +9,26 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
   const openLightbox = (src: string, alt: string) => setLightbox({ src, alt });
   const closeLightbox = () => setLightbox(null);
 
+  const images = {
+    hero: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230980/HERO_top_banner_image_inside_article_hero_media.jpg',
+    intro: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230976/INTRO_IMAGE_after_the_first_paragraphs.jpg',
+    sizeGuide: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230975/Size_Guide_Section.jpg',
+    materials: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320268/Materials_Yarn_Section.jpg',
+    strapOptions: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320249/Strap_Options_Crossbody_Wristlet_Adjustable.jpg',
+    optionalAddOns: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320235/optional_add_ons.jpg',
+    step1: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320246/STEP_1_BASE_PANEL.jpg',
+    step2: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320246/STEP_2_WORK_UP_SIDES.jpg',
+    step3: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320234/STEP_3_HEIGHT_ADJUSTMENT.jpg',
+    step4: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789320197/STEP_4_FINISHING_EDGE_CLOSE-UP.jpg',
+  };
+
   return (
     <article className="bg-[#FBF7F1]">
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
         <img
-          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230980/HERO_top_banner_image_inside_article_hero_media.jpg"
+          src={images.hero}
           alt="Crochet phone pouch free pattern finished pouch with strap"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
@@ -209,11 +85,11 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
           {/* Hero Image */}
           <button
             type="button"
-            onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230976/INTRO_IMAGE_after_the_first_paragraphs.jpg', 'Crochet phone pouch free pattern finished pouch with strap')}
+            onClick={() => openLightbox(images.intro, 'Crochet phone pouch free pattern finished pouch with strap')}
             className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
           >
             <img
-              src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230976/INTRO_IMAGE_after_the_first_paragraphs.jpg"
+              src={images.intro}
               alt="Crochet phone pouch free pattern finished pouch with strap"
               loading="lazy"
               className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -248,11 +124,11 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
 
             <button
               type="button"
-              onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230975/Size_Guide_Section.jpg', 'Crochet mobile pouch sizing guide for any phone')}
+              onClick={() => openLightbox(images.sizeGuide, 'Crochet mobile pouch sizing guide for any phone')}
               className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
             >
               <img
-                src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789230975/Size_Guide_Section.jpg"
+                src={images.sizeGuide}
                 alt="Crochet mobile pouch sizing guide for any phone"
                 loading="lazy"
                 className="w-full rounded-2xl border border-[#E9E1D7]"
@@ -282,57 +158,77 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
             </div>
           </section>
 
-          {/* Materials */}
-          <section>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
-              <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
-                Materials + Yarn (Best for a Sturdy Phone Pouch Crochet)
-              </h2>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => openLightbox('materials', 'Materials needed for crochet phone pouch free pattern')}
-              className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
-            >
-              <PouchStepImage step="M" title="Materials" colors={['#2F4A3A', '#E9E1D7', '#E4ECE7']} />
-              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
-                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
-              </span>
-            </button>
-
-            <div className="space-y-4">
-              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
-                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Yarn: Cotton vs Acrylic</h3>
-                <p className="text-sm text-[#5B5B5B] leading-relaxed"><strong>Cotton</strong> is the best choice for a <strong>phone pouch crochet</strong> project — it's durable, holds its shape, and doesn't stretch out over time. Acrylic works but can pill and stretch. For a sturdy <strong>crochet mobile pouch</strong>, always choose cotton.</p>
-              </div>
-              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
-                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Hook Size Guidance</h3>
-                <p className="text-sm text-[#5B5B5B] leading-relaxed">Use the hook size recommended on your yarn label, or go down half a size for a tighter, denser fabric. A smaller hook = a sturdier pouch that holds its shape better.</p>
-              </div>
-              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
-                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Notions</h3>
-                <p className="text-sm text-[#5B5B5B] leading-relaxed">Stitch markers (to mark corners), tapestry needle (for weaving ends), scissors, and a measuring tape. Optional: button or magnetic snap for closure, lining fabric.</p>
-              </div>
-            </div>
-          </section>
-
           {/* Pattern Steps */}
           <section>
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
                 Easy Crochet Phone Pouch Pattern (Step-by-Step)
               </h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">A simple construction that works for any phone size. Follow these steps and adjust based on your measurements.</p>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              <PouchStepImage step="1" title="Base Panel" colors={['#2F4A3A', '#4A7A5E']} />
-              <PouchStepImage step="2" title="Work Up Sides" colors={['#2F4A3A', '#E07A5F']} />
-              <PouchStepImage step="3" title="Height Adjustment" colors={['#2F4A3A', '#E9E1D7']} />
-              <PouchStepImage step="4" title="Finishing Edge" colors={['#2F4A3A', '#4A7A5E']} />
+            <div className="space-y-4 mb-6">
+              <button
+                type="button"
+                onClick={() => openLightbox(images.step1, 'Step 1: Base Panel for crochet phone pouch')}
+                className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+              >
+                <img
+                  src={images.step1}
+                  alt="Step 1: Base Panel for crochet phone pouch"
+                  loading="lazy"
+                  className="w-full rounded-2xl border border-[#E9E1D7]"
+                />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => openLightbox(images.step2, 'Step 2: Work Up Sides for crochet phone pouch')}
+                className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+              >
+                <img
+                  src={images.step2}
+                  alt="Step 2: Work Up Sides for crochet phone pouch"
+                  loading="lazy"
+                  className="w-full rounded-2xl border border-[#E9E1D7]"
+                />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => openLightbox(images.step3, 'Step 3: Height Adjustment for crochet phone pouch')}
+                className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+              >
+                <img
+                  src={images.step3}
+                  alt="Step 3: Height Adjustment for crochet phone pouch"
+                  loading="lazy"
+                  className="w-full rounded-2xl border border-[#E9E1D7]"
+                />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => openLightbox(images.step4, 'Step 4: Finishing Edge for crochet phone pouch')}
+                className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group"
+              >
+                <img
+                  src={images.step4}
+                  alt="Step 4: Finishing Edge for crochet phone pouch"
+                  loading="lazy"
+                  className="w-full rounded-2xl border border-[#E9E1D7]"
+                />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                </span>
+              </button>
             </div>
 
             <div className="space-y-4">
@@ -358,7 +254,7 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
           {/* Strap Options */}
           <section>
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
+              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
                 Strap Options (Crossbody / Wristlet / Adjustable)
               </h2>
@@ -367,10 +263,15 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
 
             <button
               type="button"
-              onClick={() => openLightbox('strap-options', 'Phone pouch crochet strap options crossbody wristlet')}
+              onClick={() => openLightbox(images.strapOptions, 'Phone pouch crochet strap options crossbody wristlet')}
               className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
             >
-              <StrapOptionsGrid />
+              <img
+                src={images.strapOptions}
+                alt="Phone pouch crochet strap options crossbody wristlet"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
               <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
                 <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
               </span>
@@ -399,19 +300,28 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
           {/* Optional Add-Ons */}
           <section>
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">5</span>
+              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
                 Optional Add-Ons (Button, Flap, Lining, Pocket)
               </h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">Customize your <strong>crochet cellphone pouch</strong> with these easy additions.</p>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              <PouchStepImage step="F" title="Flap Closure" colors={['#2F4A3A', '#E07A5F']} />
-              <PouchStepImage step="B" title="Button" colors={['#2F4A3A', '#4A7A5E']} />
-              <PouchStepImage step="P" title="Inside Pocket" colors={['#2F4A3A', '#E9E1D7']} />
-              <PouchStepImage step="L" title="Fabric Lining" colors={['#2F4A3A', '#D4C5B0']} />
-            </div>
+            <button
+              type="button"
+              onClick={() => openLightbox(images.optionalAddOns, 'Optional add-ons for crochet phone pouch')}
+              className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
+            >
+              <img
+                src={images.optionalAddOns}
+                alt="Optional add-ons for crochet phone pouch"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
+              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+              </span>
+            </button>
 
             <div className="space-y-4">
               <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
@@ -449,7 +359,7 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
           {/* Common Mistakes */}
           <section>
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">6</span>
+              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">5</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
                 Common Mistakes (And Easy Fixes)
               </h2>
@@ -506,6 +416,47 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
             </div>
           </section>
 
+          {/* Materials (Moved to Bottom) */}
+          <section>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">6</span>
+              <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">
+                Materials + Yarn (Best for a Sturdy Phone Pouch Crochet)
+              </h2>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => openLightbox(images.materials, 'Materials needed for crochet phone pouch free pattern')}
+              className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group"
+            >
+              <img
+                src={images.materials}
+                alt="Materials needed for crochet phone pouch free pattern"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
+              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+              </span>
+            </button>
+
+            <div className="space-y-4">
+              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
+                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Yarn: Cotton vs Acrylic</h3>
+                <p className="text-sm text-[#5B5B5B] leading-relaxed"><strong>Cotton</strong> is the best choice for a <strong>phone pouch crochet</strong> project — it's durable, holds its shape, and doesn't stretch out over time. Acrylic works but can pill and stretch. For a sturdy <strong>crochet mobile pouch</strong>, always choose cotton.</p>
+              </div>
+              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
+                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Hook Size Guidance</h3>
+                <p className="text-sm text-[#5B5B5B] leading-relaxed">Use the hook size recommended on your yarn label, or go down half a size for a tighter, denser fabric. A smaller hook = a sturdier pouch that holds its shape better.</p>
+              </div>
+              <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
+                <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Notions</h3>
+                <p className="text-sm text-[#5B5B5B] leading-relaxed">Stitch markers (to mark corners), tapestry needle (for weaving ends), scissors, and a measuring tape. Optional: button or magnetic snap for closure, lining fabric.</p>
+              </div>
+            </div>
+          </section>
+
           {/* Internal Links */}
           <div className="bg-[#E4ECE7] border border-[#CCD9D0] rounded-2xl p-5 sm:p-6">
             <p className="text-sm font-semibold text-[#2F4A3A] mb-3">Related Guides:</p>
@@ -555,9 +506,11 @@ export default function BlogArticleCrochetPhonePouchFreePattern() {
             <X className="w-5 h-5" />
           </button>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="w-full max-h-[85vh] overflow-auto rounded-2xl shadow-2xl bg-[#F5F0E8] p-4">
-              <p className="text-center text-[#5B5B5B] text-sm italic">{lightbox.alt}</p>
-            </div>
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
             <p className="text-center text-white/80 text-sm mt-3">{lightbox.alt}</p>
           </div>
         </div>
