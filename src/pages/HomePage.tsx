@@ -11,6 +11,8 @@ import {
   Palette,
   FileText,
   Calendar,
+  Clock,
+  Tag,
 } from 'lucide-react';
 
 const CHECKOUT_URL = 'https://payhip.com/b/OPqsZ';
@@ -18,10 +20,51 @@ const CHECKOUT_URL = 'https://payhip.com/b/OPqsZ';
 const FEATURED_POSTS = [
   {
     slug: 'crochet-blanket-stitches-guide',
-    icon: BookOpen,
     title: 'Crochet Blanket Stitches: A Handy Guide',
-    description: 'Basic, textured, lacy, and fun stitches—plus UK vs US terms and a finishable next step.',
+    description: 'Basic, textured, lacy, and fun stitches—plus UK vs US terms.',
     tag: 'Stitch Guide',
+    readTime: '8 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183221/Section_Image_Basic_Crochet_Stitches.jpg',
+  },
+  {
+    slug: 'crochet-blanket-sizes-yarn-yardage-chart',
+    title: 'Crochet Blanket Sizes + Yarn Yardage Calculator',
+    description: 'Size chart + yarn yardage estimates so you don\'t run out of yarn.',
+    tag: 'Size Guide',
+    readTime: '10 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939225/Folded_crochet_blanket_on_linen_2K_202609090928.jpg',
+  },
+  {
+    slug: 'how-to-read-crochet-blanket-pattern',
+    title: 'How to Read ANY Crochet Blanket Pattern',
+    description: 'Beginner cheat sheet with stitch multiples and pattern repeats.',
+    tag: 'Pattern Guide',
+    readTime: '12 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939660/Crochet_pattern_and_yarn_arrange__2K_202609090930.jpg',
+  },
+  {
+    slug: 'baby-blanket-crochet-stitch-patterns',
+    title: '25 Baby Blanket Crochet Stitch Patterns',
+    description: 'Browse 25 baby blanket stitches with warmth + stretch ratings.',
+    tag: 'Baby Blankets',
+    readTime: '18 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788939227/Folded_handmade_crochet_blankets_2K_202609090929.jpg',
+  },
+  {
+    slug: 'crochet-stitch-patterns',
+    title: '27 Textured Stitches That Look Expensive',
+    description: 'Discover 27 textured crochet stitches for blankets, scarves, and more.',
+    tag: 'Stitch Guide',
+    readTime: '20 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
+  },
+  {
+    slug: 'crochet-hats-free-pattern',
+    title: '25 Free Beanie Crochet Pattern Ideas',
+    description: 'Explore 25 free beanie patterns plus yarn, fit, and texture tips.',
+    tag: 'Pattern Guide',
+    readTime: '25 min',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
   },
 ];
 
@@ -116,8 +159,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Blog Posts */}
-      <section className="py-16 md:py-24">
+      {/* From the Blog — Auto-Scroll Carousel */}
+      <section className="py-16 md:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-3 mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-3.5 py-1 rounded-full">
@@ -131,54 +174,61 @@ export default function HomePage() {
               Beginner-friendly guides that help you choose, plan, and finish your blanket.
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {FEATURED_POSTS.map((post) => {
-              const Icon = post.icon;
-              return (
-                <Link
-                  key={post.slug}
-                  to={`/blog/${post.slug}`}
-                  className="block bg-[#FFFFFF] border border-[#E9E1D7] rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-[#2F4A3A]/40 transition-all no-underline group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#2F4A3A]/10 text-[#2F4A3A] flex items-center justify-center shrink-0">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-2 py-0.5 rounded-full">
-                        {post.tag}
-                      </span>
-                      <h3 className="font-fraunces text-lg font-semibold text-[#1F1F1F] mt-2 mb-2 group-hover:text-[#2F4A3A] transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-[#5B5B5B] leading-relaxed mb-3">
-                        {post.description}
-                      </p>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F4A3A] group-hover:gap-2.5 transition-all">
-                        Read the guide <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </div>
+        {/* Carousel */}
+        <div className="blog-carousel group">
+          <div className="blog-carousel-track">
+            {[...FEATURED_POSTS, ...FEATURED_POSTS].map((post, i) => (
+              <Link
+                key={`${post.slug}-${i}`}
+                to={`/blog/${post.slug}`}
+                className="blog-carousel-card"
+              >
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-2.5 py-1 rounded-full shadow-sm">
+                      {post.tag}
+                    </span>
                   </div>
-                </Link>
-              );
-            })}
-
-            {/* CTA Card */}
-            <Link
-              to="/blog"
-              className="flex items-center justify-center bg-[#E4ECE7] border border-[#CCD9D0] rounded-2xl p-6 hover:bg-[#D8E5DD] transition-colors no-underline group"
-            >
-              <div className="text-center">
-                <p className="font-fraunces text-lg font-semibold text-[#2F4A3A] mb-2">
-                  View all articles
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F4A3A] group-hover:gap-2.5 transition-all">
-                  Go to Blog <ArrowRight className="w-4 h-4" />
-                </span>
-              </div>
-            </Link>
+                </div>
+                <div className="p-5 flex flex-col h-full">
+                  <h3 className="font-fraunces text-base sm:text-lg font-semibold text-[#1F1F1F] mb-2 group-hover:text-[#2F4A3A] transition-colors leading-snug line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-[#5B5B5B] leading-relaxed mb-4 flex-1 line-clamp-2">
+                    {post.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-3 border-t border-[#E9E1D7]/60">
+                    <div className="flex items-center gap-2 text-xs text-[#5B5B5B]">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" /> {post.readTime}
+                      </span>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F4A3A] group-hover:gap-2.5 transition-all">
+                      Read <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-[#2F4A3A] text-white font-semibold text-sm hover:bg-[#263C30] transition-colors no-underline shadow-md"
+          >
+            See all articles <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
