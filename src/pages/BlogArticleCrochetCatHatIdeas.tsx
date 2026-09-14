@@ -62,6 +62,15 @@ export default function BlogArticleCrochetCatHatIdeas() {
     ribbedBlo: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379012/BLO_Ribbed_Cat_Ear_Easy.jpg',
     ribbedFisherman: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379010/FPDCBPDC_Fisherman_Rib_Easy.jpg',
     ribbedWaffle: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378950/Waffle_Stitch_Cat_Ear_Intermediate.jpg',
+    winterChunky: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789380012/Chunky_Bulky_Cat_Ear.jpg',
+    winterSuper: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789380020/Super_Bulky_Quick_Cat.jpg',
+    winterBobble: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789380021/Bobble_Stitch_Cat_Ear.jpg',
+    aestheticPastel: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379989/Pastel_Kitten_Beanie.jpg',
+    aestheticOmbre: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379986/Ombre_Gradient_Cat.jpg',
+    aestheticStriped: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379994/Striped_Cat_Ear_Hat.jpg',
+    aestheticLemon: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379975/Lemon_Peel_Texture_Cat.jpg',
+    fittedClassic: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379989/Fitted_Classic_Cat.jpg',
+    slouchyBeanie: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379976/Slouchy_Cat_Beanie.jpg',
   };
 
   const beginnerImages = [
@@ -75,6 +84,24 @@ export default function BlogArticleCrochetCatHatIdeas() {
     { src: images.ribbedBlo, alt: 'BLO Ribbed Cat Ear hat' },
     { src: images.ribbedFisherman, alt: 'FPDC/BPDC Fisherman Rib cat ear hat' },
     { src: images.ribbedWaffle, alt: 'Waffle Stitch Cat Ear hat' },
+  ];
+
+  const winterImages = [
+    { src: images.winterChunky, alt: 'Chunky Bulky Cat Ear hat' },
+    { src: images.winterSuper, alt: 'Super Bulky Quick Cat hat' },
+    { src: images.winterBobble, alt: 'Bobble Stitch Cat Ear hat' },
+  ];
+
+  const aestheticImages = [
+    { src: images.aestheticPastel, alt: 'Pastel Kitten Beanie' },
+    { src: images.aestheticOmbre, alt: 'Ombre Gradient Cat hat' },
+    { src: images.aestheticStriped, alt: 'Striped Cat Ear Hat' },
+    { src: images.aestheticLemon, alt: 'Lemon Peel Texture Cat hat' },
+  ];
+
+  const fittedImages = [
+    { src: images.fittedClassic, alt: 'Fitted Classic Cat hat' },
+    { src: images.slouchyBeanie, alt: 'Slouchy Cat Beanie' },
   ];
 
   return (
@@ -277,18 +304,31 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4">Cozy Winter Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Chunky yarn, warm textures, and maximum coziness for cold weather.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-              {WINTER_IDEAS.map((idea) => (
-                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+              {WINTER_IDEAS.map((idea, i) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button type="button" onClick={() => openLightbox(winterImages[i].src, winterImages[i].alt)} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+                    <img
+                      src={winterImages[i].src}
+                      alt={winterImages[i].alt}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                      <span>Yarn: {idea.yarn}</span>
+                      <span>·</span>
+                      <span>{idea.fit}</span>
+                    </div>
+                    <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
-                    <span>Yarn: {idea.yarn}</span>
-                    <span>·</span>
-                    <span>{idea.fit}</span>
-                  </div>
-                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                 </div>
               ))}
             </div>
@@ -297,18 +337,31 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Aesthetic Pastel / Colorblock Cat Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Instagram-worthy colors and modern designs — perfect for gifts and photos.</p>
             <div className="grid grid-cols-2 gap-3 mb-4">
-              {AESTHETIC_IDEAS.map((idea) => (
-                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+              {AESTHETIC_IDEAS.map((idea, i) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button type="button" onClick={() => openLightbox(aestheticImages[i].src, aestheticImages[i].alt)} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+                    <img
+                      src={aestheticImages[i].src}
+                      alt={aestheticImages[i].alt}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                      <span>Yarn: {idea.yarn}</span>
+                      <span>·</span>
+                      <span>{idea.fit}</span>
+                    </div>
+                    <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
-                    <span>Yarn: {idea.yarn}</span>
-                    <span>·</span>
-                    <span>{idea.fit}</span>
-                  </div>
-                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                 </div>
               ))}
             </div>
@@ -317,18 +370,31 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Slouchy vs Fitted Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">The same cat ear pattern works for both — just adjust the height.</p>
             <div className="grid grid-cols-2 gap-3 mb-4">
-              {FITTED_VS_SLOUCHY.map((idea) => (
-                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+              {FITTED_VS_SLOUCHY.map((idea, i) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button type="button" onClick={() => openLightbox(fittedImages[i].src, fittedImages[i].alt)} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+                    <img
+                      src={fittedImages[i].src}
+                      alt={fittedImages[i].alt}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                      <span>Yarn: {idea.yarn}</span>
+                      <span>·</span>
+                      <span>{idea.fit}</span>
+                    </div>
+                    <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
-                    <span>Yarn: {idea.yarn}</span>
-                    <span>·</span>
-                    <span>{idea.fit}</span>
-                  </div>
-                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                 </div>
               ))}
             </div>
