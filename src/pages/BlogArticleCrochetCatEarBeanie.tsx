@@ -140,6 +140,19 @@ export default function BlogArticleCrochetCatEarBeanie() {
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">Crochet Cat Ear Beanie Pattern (Beginner Steps)</h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">The rectangle-to-seam method is the easiest <strong>cat ear hat crochet pattern</strong>. No increasing, no decreases, no rounds — just a flat rectangle that becomes a hat.</p>
+
+            <button type="button" onClick={() => openLightbox('https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371511/Crochet_Cat_Ear_Beanie_Pattern_IMAGE_GRID.png', 'Crochet cat ear beanie pattern step by step')} className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group">
+              <img
+                src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371511/Crochet_Cat_Ear_Beanie_Pattern_IMAGE_GRID.png"
+                alt="Crochet cat ear beanie pattern step by step"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
+              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+              </span>
+            </button>
+
             <div className="space-y-4">
               <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
                 <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Step 1: The Brim</h3>
