@@ -135,7 +135,7 @@ const BLOG_POSTS = [
     category: 'animals' as CategoryId,
     readTime: '20 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379013/Hero_Banner_Background.jpg',
   },
 ];
 
