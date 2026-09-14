@@ -59,6 +59,9 @@ export default function BlogArticleCrochetCatHatIdeas() {
     beginnerRect: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378986/Classic_Rectangle_Cat_Ear_BEGINNER.jpg',
     beginnerSc: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378962/Single_Crochet_Basic_BEGINNER.jpg',
     beginnerColor: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378957/Color_Block_Cat_Ear_BEGINNER.jpg',
+    ribbedBlo: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379012/BLO_Ribbed_Cat_Ear_Easy.jpg',
+    ribbedFisherman: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379010/FPDCBPDC_Fisherman_Rib_Easy.jpg',
+    ribbedWaffle: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378950/Waffle_Stitch_Cat_Ear_Intermediate.jpg',
   };
 
   const beginnerImages = [
@@ -66,6 +69,12 @@ export default function BlogArticleCrochetCatHatIdeas() {
     { src: images.beginnerSc, alt: 'Single Crochet Basic cat ear hat' },
     { src: images.beginnerHdc, alt: 'Half Double Crochet Quick cat ear hat' },
     { src: images.beginnerColor, alt: 'Color Block Cat Ear beanie' },
+  ];
+
+  const ribbedImages = [
+    { src: images.ribbedBlo, alt: 'BLO Ribbed Cat Ear hat' },
+    { src: images.ribbedFisherman, alt: 'FPDC/BPDC Fisherman Rib cat ear hat' },
+    { src: images.ribbedWaffle, alt: 'Waffle Stitch Cat Ear hat' },
   ];
 
   return (
@@ -227,18 +236,31 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Ribbed / Knit-Look Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Stretchy ribbing that looks like knitting — cozy and professional.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-              {RIBBED_IDEAS.map((idea) => (
-                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+              {RIBBED_IDEAS.map((idea, i) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button type="button" onClick={() => openLightbox(ribbedImages[i].src, ribbedImages[i].alt)} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+                    <img
+                      src={ribbedImages[i].src}
+                      alt={ribbedImages[i].alt}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                      <span>Yarn: {idea.yarn}</span>
+                      <span>·</span>
+                      <span>{idea.fit}</span>
+                    </div>
+                    <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
-                    <span>Yarn: {idea.yarn}</span>
-                    <span>·</span>
-                    <span>{idea.fit}</span>
-                  </div>
-                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
                 </div>
               ))}
             </div>
