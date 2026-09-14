@@ -2,114 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, ArrowRight, X, ZoomIn } from 'lucide-react';
 
-/* ─── SVG Image Components ─── */
-
-function HeroCatHatIdeas() {
-  return (
-    <svg viewBox="0 0 800 400" className="w-full" style={{ background: '#F5F0E8' }}>
-      <rect width="800" height="400" fill="#FBF7F1" />
-      {/* Multiple cat hats */}
-      {[
-        { x: 120, color: '#2F4A3A' },
-        { x: 280, color: '#E07A5F' },
-        { x: 440, color: '#4A7A5E' },
-        { x: 600, color: '#8B6F5E' },
-      ].map((h, i) => (
-        <g key={i}>
-          <ellipse cx={h.x} cy="260" rx="70" ry="50" fill={h.color} />
-          <rect x={h.x-70} y="210" width="140" height="50" fill={h.color} />
-          <rect x={h.x-72} y="245" width="144" height="14" rx="4" fill={h.color} opacity="0.7" />
-          <polygon points={`${h.x-40},210 ${h.x-25},150 ${h.x-10},210`} fill={h.color} />
-          <polygon points={`${h.x+10},210 ${h.x+25},150 ${h.x+40},210`} fill={h.color} />
-        </g>
-      ))}
-      <text x="400" y="390" textAnchor="middle" fill="#2F4A3A" fontSize="14" fontFamily="sans-serif" opacity="0.6">17 Crochet Cat Hat Ideas</text>
-    </svg>
-  );
-}
-
-function QuickPicksGrid() {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-      {[
-        { name: 'Classic Pointy', color: '#2F4A3A' },
-        { name: 'Soft Round', color: '#E07A5F' },
-        { name: 'Ribbed Knit-Look', color: '#4A7A5E' },
-        { name: 'Pastel Kitten', color: '#D4C5B0' },
-        { name: 'Chunky Winter', color: '#8B6F5E' },
-      ].map((item) => (
-        <div key={item.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-          <svg viewBox="0 0 200 120" className="w-full" style={{ background: '#F5F0E8' }}>
-            <rect width="200" height="120" fill="#FBF7F1" />
-            <ellipse cx="100" cy="90" rx="60" ry="35" fill={item.color} />
-            <rect x="40" y="55" width="120" height="35" fill={item.color} />
-            <polygon points="60,55 75,15 90,55" fill={item.color} />
-            <polygon points="110,55 125,15 140,55" fill={item.color} />
-          </svg>
-          <div className="px-3 py-2 text-center">
-            <p className="text-xs font-semibold text-[#1F1F1F]">{item.name}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function EarGuideImage() {
-  return (
-    <svg viewBox="0 0 600 200" className="w-full" style={{ background: '#FBF7F1' }}>
-      <rect width="600" height="200" fill="#FBF7F1" rx="16" />
-      {/* Pointy */}
-      <g>
-        <polygon points="80,150 100,60 120,150" fill="#2F4A3A" />
-        <polygon points="180,150 200,60 220,150" fill="#2F4A3A" />
-        <text x="150" y="180" textAnchor="middle" fill="#2F4A3A" fontSize="10" fontFamily="sans-serif" fontWeight="600">Pointy</text>
-        <text x="150" y="195" textAnchor="middle" fill="#5B5B5B" fontSize="8" fontFamily="sans-serif">Classic cat look</text>
-      </g>
-      {/* Soft */}
-      <g>
-        <path d="M250,150 Q240,80 270,60 Q300,40 290,150" fill="#E07A5F" />
-        <path d="M350,150 Q340,80 370,60 Q400,40 390,150" fill="#E07A5F" />
-        <text x="320" y="180" textAnchor="middle" fill="#E07A5F" fontSize="10" fontFamily="sans-serif" fontWeight="600">Soft</text>
-        <text x="320" y="195" textAnchor="middle" fill="#5B5B5B" fontSize="8" fontFamily="sans-serif">Round + cute</text>
-      </g>
-      {/* Mini */}
-      <g>
-        <ellipse cx="460" cy="100" rx="15" ry="22" fill="#4A7A5E" />
-        <ellipse cx="540" cy="100" rx="15" ry="22" fill="#4A7A5E" />
-        <text x="500" y="180" textAnchor="middle" fill="#4A7A5E" fontSize="10" fontFamily="sans-serif" fontWeight="600">Mini</text>
-        <text x="500" y="195" textAnchor="middle" fill="#5B5B5B" fontSize="8" fontFamily="sans-serif">Subtle + modern</text>
-      </g>
-    </svg>
-  );
-}
-
-function IdeaCard({ name, level, yarn, fit, tip, color }: { name: string; level: string; yarn: string; fit: string; tip: string; color: string }) {
-  return (
-    <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-      <svg viewBox="0 0 200 100" className="w-full" style={{ background: '#F5F0E8' }}>
-        <rect width="200" height="100" fill="#FBF7F1" />
-        <ellipse cx="100" cy="75" rx="55" ry="30" fill={color} />
-        <rect x="45" y="45" width="110" height="30" fill={color} />
-        <polygon points="65,45 78,10 91,45" fill={color} />
-        <polygon points="109,45 122,10 135,45" fill={color} />
-      </svg>
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-2">
-          <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{name}</h4>
-          <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{level}</span>
-        </div>
-        <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
-          <span>Yarn: {yarn}</span>
-          <span>·</span>
-          <span>{fit}</span>
-        </div>
-        <p className="text-xs text-[#2F4A3A] font-medium">Tip: {tip}</p>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Data ─── */
 
 interface CatHatIdea {
@@ -118,38 +10,37 @@ interface CatHatIdea {
   yarn: string;
   fit: string;
   tip: string;
-  color: string;
 }
 
 const BEGINNER_IDEAS: CatHatIdea[] = [
-  { name: 'Classic Rectangle Cat Ear', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Rectangle + seam = fastest cat ear beanie. The corners become ears automatically.', color: '#2F4A3A' },
-  { name: 'Single Crochet Basic', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'SC creates the densest fabric — ears hold shape without extra reinforcement.', color: '#4A7A5E' },
-  { name: 'Half Double Crochet Quick', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'HDC is faster than SC with a slightly softer feel. Great for everyday wear.', color: '#8B6F5E' },
-  { name: 'Color Block Cat Ear', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Use two colors — one for the body, one for the ears. The contrast makes ears pop.', color: '#E07A5F' },
+  { name: 'Classic Rectangle Cat Ear', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Rectangle + seam = fastest cat ear beanie. The corners become ears automatically.' },
+  { name: 'Single Crochet Basic', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'SC creates the densest fabric — ears hold shape without extra reinforcement.' },
+  { name: 'Half Double Crochet Quick', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'HDC is faster than SC with a slightly softer feel. Great for everyday wear.' },
+  { name: 'Color Block Cat Ear', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Use two colors — one for the body, one for the ears. The contrast makes ears pop.' },
 ];
 
 const RIBBED_IDEAS: CatHatIdea[] = [
-  { name: 'BLO Ribbed Cat Ear', level: 'Easy', yarn: '#4 worsted', fit: 'Stretchy', tip: 'BLO HDC ribbing stretches to fit any head — the most forgiving fit.', color: '#2F4A3A' },
-  { name: 'FPDC/BPDC Fisherman Rib', level: 'Easy', yarn: '#4 worsted', fit: 'Stretchy', tip: 'Front-post and back-post DC create a deep, knit-look rib that screams cozy.', color: '#4A7A5E' },
-  { name: 'Waffle Stitch Cat Ear', level: 'Intermediate', yarn: '#4 worsted', fit: 'Cozy', tip: 'Waffle texture adds warmth and visual interest — ears look great in this stitch.', color: '#8B6F5E' },
+  { name: 'BLO Ribbed Cat Ear', level: 'Easy', yarn: '#4 worsted', fit: 'Stretchy', tip: 'BLO HDC ribbing stretches to fit any head — the most forgiving fit.' },
+  { name: 'FPDC/BPDC Fisherman Rib', level: 'Easy', yarn: '#4 worsted', fit: 'Stretchy', tip: 'Front-post and back-post DC create a deep, knit-look rib that screams cozy.' },
+  { name: 'Waffle Stitch Cat Ear', level: 'Intermediate', yarn: '#4 worsted', fit: 'Cozy', tip: 'Waffle texture adds warmth and visual interest — ears look great in this stitch.' },
 ];
 
 const WINTER_IDEAS: CatHatIdea[] = [
-  { name: 'Chunky Bulky Cat Ear', level: 'Beginner', yarn: '#5 bulky', fit: 'Slouchy', tip: 'Bulky yarn works up in under an hour — perfect for last-minute gifts.', color: '#2F4A3A' },
-  { name: 'Super Bulky Quick Cat', level: 'Beginner', yarn: '#6 super bulky', fit: 'Slouchy', tip: 'The fastest cat hat on this list — 30 minutes from start to finish.', color: '#E07A5F' },
-  { name: 'Bobble Stitch Cat Ear', level: 'Intermediate', yarn: '#4 worsted', fit: 'Cozy', tip: 'Bobbles add playful texture that looks incredible in solid colors.', color: '#4A7A5E' },
+  { name: 'Chunky Bulky Cat Ear', level: 'Beginner', yarn: '#5 bulky', fit: 'Slouchy', tip: 'Bulky yarn works up in under an hour — perfect for last-minute gifts.' },
+  { name: 'Super Bulky Quick Cat', level: 'Beginner', yarn: '#6 super bulky', fit: 'Slouchy', tip: 'The fastest cat hat on this list — 30 minutes from start to finish.' },
+  { name: 'Bobble Stitch Cat Ear', level: 'Intermediate', yarn: '#4 worsted', fit: 'Cozy', tip: 'Bobbles add playful texture that looks incredible in solid colors.' },
 ];
 
 const AESTHETIC_IDEAS: CatHatIdea[] = [
-  { name: 'Pastel Kitten Beanie', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Pastel pink, lavender, or mint with soft ears — maximum cozy aesthetic energy.', color: '#D4C5B0' },
-  { name: 'Ombre Gradient Cat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Fade between 3 coordinating shades for a sunset effect — the ears fade too.', color: '#E07A5F' },
-  { name: 'Striped Cat Ear Hat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Horizontal stripes in 2-3 colors. Stripes wrap around ears for a playful look.', color: '#2F4A3A' },
-  { name: 'Lemon Peel Texture Cat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Lemon peel stitch creates a magical textured surface — eye-catching in any color.', color: '#4A7A5E' },
+  { name: 'Pastel Kitten Beanie', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Pastel pink, lavender, or mint with soft ears — maximum cozy aesthetic energy.' },
+  { name: 'Ombre Gradient Cat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Fade between 3 coordinating shades for a sunset effect — the ears fade too.' },
+  { name: 'Striped Cat Ear Hat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Horizontal stripes in 2-3 colors. Stripes wrap around ears for a playful look.' },
+  { name: 'Lemon Peel Texture Cat', level: 'Easy', yarn: '#4 worsted', fit: 'Fitted', tip: 'Lemon peel stitch creates a magical textured surface — eye-catching in any color.' },
 ];
 
 const FITTED_VS_SLOUCHY: CatHatIdea[] = [
-  { name: 'Fitted Classic Cat', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Subtract 2" from head circumference for a snug fit that stays in place.', color: '#2F4A3A' },
-  { name: 'Slouchy Cat Beanie', level: 'Easy', yarn: '#4 worsted', fit: 'Slouchy', tip: 'Add 3-4" extra height for a relaxed, draped look behind the ears.', color: '#8B6F5E' },
+  { name: 'Fitted Classic Cat', level: 'Beginner', yarn: '#4 worsted', fit: 'Fitted', tip: 'Subtract 2" from head circumference for a snug fit that stays in place.' },
+  { name: 'Slouchy Cat Beanie', level: 'Easy', yarn: '#4 worsted', fit: 'Slouchy', tip: 'Add 3-4" extra height for a relaxed, draped look behind the ears.' },
 ];
 
 /* ─── Main Component ─── */
@@ -159,14 +50,35 @@ export default function BlogArticleCrochetCatHatIdeas() {
   const openLightbox = (src: string, alt: string) => setLightbox({ src, alt });
   const closeLightbox = () => setLightbox(null);
 
+  const images = {
+    hero: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379013/Hero_Banner_Background.jpg',
+    intro: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378971/Intro_img.jpg',
+    quickPicks: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378993/Quick_Picks_Grid.jpg',
+    earGuide: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379011/Ear_Types_Guide_3_ear_styles.jpg',
+    beginnerHdc: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379004/Half_Double_Crochet_Quick_BEGINNER.jpg',
+    beginnerRect: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378986/Classic_Rectangle_Cat_Ear_BEGINNER.jpg',
+    beginnerSc: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378962/Single_Crochet_Basic_BEGINNER.jpg',
+    beginnerColor: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789378957/Color_Block_Cat_Ear_BEGINNER.jpg',
+  };
+
+  const beginnerImages = [
+    { src: images.beginnerRect, alt: 'Classic Rectangle Cat Ear beanie' },
+    { src: images.beginnerSc, alt: 'Single Crochet Basic cat ear hat' },
+    { src: images.beginnerHdc, alt: 'Half Double Crochet Quick cat ear hat' },
+    { src: images.beginnerColor, alt: 'Color Block Cat Ear beanie' },
+  ];
+
   return (
     <article className="bg-[#FBF7F1]">
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
-        <div className="absolute inset-0">
-          <HeroCatHatIdeas />
-        </div>
+        <img
+          src={images.hero}
+          alt="Crochet cat hat ideas collection"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center w-full">
           <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#CCD9D0] hover:text-white mb-6 no-underline transition-colors">← Back to Blog</Link>
@@ -207,9 +119,14 @@ export default function BlogArticleCrochetCatHatIdeas() {
             </p>
           </div>
 
-          {/* Hero Image */}
-          <button type="button" onClick={() => openLightbox('hero', 'Crochet cat hat ideas collection')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
-            <HeroCatHatIdeas />
+          {/* Intro Image */}
+          <button type="button" onClick={() => openLightbox(images.intro, 'Crochet cat hat ideas collection')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+            <img
+              src={images.intro}
+              alt="Crochet cat hat ideas collection"
+              loading="lazy"
+              className="w-full rounded-2xl border border-[#E9E1D7]"
+            />
             <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
               <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
             </span>
@@ -222,7 +139,17 @@ export default function BlogArticleCrochetCatHatIdeas() {
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">Quick Picks (Most Wearable Styles)</h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">Can't browse all 17? These five are the most popular and versatile.</p>
-            <QuickPicksGrid />
+            <button type="button" onClick={() => openLightbox(images.quickPicks, 'Quick picks - most wearable cat ear hat styles')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+              <img
+                src={images.quickPicks}
+                alt="Quick picks - most wearable cat ear hat styles"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
+              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+              </span>
+            </button>
           </section>
 
           {/* Ear Guide */}
@@ -231,8 +158,13 @@ export default function BlogArticleCrochetCatHatIdeas() {
               <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">How to Choose Your Cat Ears (Quick Ear Guide)</h2>
             </div>
-            <button type="button" onClick={() => openLightbox('ear-guide', 'Cat eared beanie ear shaping styles guide')} className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group">
-              <EarGuideImage />
+            <button type="button" onClick={() => openLightbox(images.earGuide, 'Cat eared beanie ear shaping styles guide')} className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group">
+              <img
+                src={images.earGuide}
+                alt="Cat eared beanie ear shaping styles guide"
+                loading="lazy"
+                className="w-full rounded-2xl border border-[#E9E1D7]"
+              />
               <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
                 <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
               </span>
@@ -262,14 +194,53 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4">Beginner-Friendly Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Simple construction, basic stitches, and guaranteed results. Perfect for your first <strong>crochet cat hat</strong>.</p>
             <div className="grid grid-cols-2 gap-3 mb-4">
-              {BEGINNER_IDEAS.map((p) => <IdeaCard key={p.name} {...p} />)}
+              {BEGINNER_IDEAS.map((idea, i) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
+                  <button type="button" onClick={() => openLightbox(beginnerImages[i].src, beginnerImages[i].alt)} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+                    <img
+                      src={beginnerImages[i].src}
+                      alt={beginnerImages[i].alt}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover"
+                    />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                    </span>
+                  </button>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                      <span>Yarn: {idea.yarn}</span>
+                      <span>·</span>
+                      <span>{idea.fit}</span>
+                    </div>
+                    <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Ribbed */}
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Ribbed / Knit-Look Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Stretchy ribbing that looks like knitting — cozy and professional.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-              {RIBBED_IDEAS.map((p) => <IdeaCard key={p.name} {...p} />)}
+              {RIBBED_IDEAS.map((idea) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                    <span>Yarn: {idea.yarn}</span>
+                    <span>·</span>
+                    <span>{idea.fit}</span>
+                  </div>
+                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
+                </div>
+              ))}
             </div>
 
             {/* CTA Block Mid */}
@@ -284,21 +255,60 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4">Cozy Winter Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Chunky yarn, warm textures, and maximum coziness for cold weather.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-              {WINTER_IDEAS.map((p) => <IdeaCard key={p.name} {...p} />)}
+              {WINTER_IDEAS.map((idea) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                    <span>Yarn: {idea.yarn}</span>
+                    <span>·</span>
+                    <span>{idea.fit}</span>
+                  </div>
+                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
+                </div>
+              ))}
             </div>
 
             {/* Aesthetic */}
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Aesthetic Pastel / Colorblock Cat Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">Instagram-worthy colors and modern designs — perfect for gifts and photos.</p>
             <div className="grid grid-cols-2 gap-3 mb-4">
-              {AESTHETIC_IDEAS.map((p) => <IdeaCard key={p.name} {...p} />)}
+              {AESTHETIC_IDEAS.map((idea) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                    <span>Yarn: {idea.yarn}</span>
+                    <span>·</span>
+                    <span>{idea.fit}</span>
+                  </div>
+                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
+                </div>
+              ))}
             </div>
 
             {/* Fitted vs Slouchy */}
             <h3 className="font-fraunces text-xl font-semibold text-[#2F4A3A] mb-4 mt-10">Slouchy vs Fitted Cat Ear Hats</h3>
             <p className="text-sm text-[#5B5B5B] mb-5">The same cat ear pattern works for both — just adjust the height.</p>
             <div className="grid grid-cols-2 gap-3 mb-4">
-              {FITTED_VS_SLOUCHY.map((p) => <IdeaCard key={p.name} {...p} />)}
+              {FITTED_VS_SLOUCHY.map((idea) => (
+                <div key={idea.name} className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-fraunces text-sm font-semibold text-[#1F1F1F]">{idea.name}</h4>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#2F4A3A] bg-[#E4ECE7] px-1.5 py-0.5 rounded-full">{idea.level}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-[#5B5B5B] mb-2">
+                    <span>Yarn: {idea.yarn}</span>
+                    <span>·</span>
+                    <span>{idea.fit}</span>
+                  </div>
+                  <p className="text-xs text-[#2F4A3A] font-medium">Tip: {idea.tip}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -378,9 +388,11 @@ export default function BlogArticleCrochetCatHatIdeas() {
             <X className="w-5 h-5" />
           </button>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="w-full max-h-[85vh] overflow-auto rounded-2xl shadow-2xl bg-[#F5F0E8] p-4">
-              <p className="text-center text-[#5B5B5B] text-sm italic">{lightbox.alt}</p>
-            </div>
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
             <p className="text-center text-white/80 text-sm mt-3">{lightbox.alt}</p>
           </div>
         </div>
