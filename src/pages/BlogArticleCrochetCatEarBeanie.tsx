@@ -2,119 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, ArrowRight, X, ZoomIn } from 'lucide-react';
 
-/* ─── SVG Image Components ─── */
-
-function HeroCatEarBeanie() {
-  return (
-    <svg viewBox="0 0 800 400" className="w-full" style={{ background: '#F5F0E8' }}>
-      <rect width="800" height="400" fill="#FBF7F1" />
-      {/* Beanie body */}
-      <ellipse cx="400" cy="250" rx="160" ry="100" fill="#2F4A3A" />
-      <rect x="240" y="150" width="320" height="100" fill="#2F4A3A" />
-      {/* Brim */}
-      <rect x="235" y="230" width="330" height="30" rx="6" fill="#1F1F1F" />
-      {/* Ears */}
-      <polygon points="290,150 310,60 340,150" fill="#2F4A3A" />
-      <polygon points="460,150 490,60 510,150" fill="#2F4A3A" />
-      <polygon points="298,150 314,75 332,150" fill="#4A7A5E" opacity="0.5" />
-      <polygon points="468,150 486,75 502,150" fill="#4A7A5E" opacity="0.5" />
-      {/* Stitch texture */}
-      {[0,1,2,3,4,5].map(i => (
-        <line key={i} x1="250" y1={160+i*12} x2="550" y2={160+i*12} stroke="#4A7A5E" strokeWidth="1" opacity="0.3" />
-      ))}
-      <text x="400" y="390" textAnchor="middle" fill="#2F4A3A" fontSize="14" fontFamily="sans-serif" opacity="0.6">Crochet Cat Ear Beanie</text>
-    </svg>
-  );
-}
-
-function SizingGuideImage() {
-  return (
-    <svg viewBox="0 0 600 300" className="w-full" style={{ background: '#FBF7F1' }}>
-      <rect width="600" height="300" fill="#FBF7F1" rx="16" />
-      {/* Head outline */}
-      <circle cx="200" cy="150" r="80" fill="none" stroke="#2F4A3A" strokeWidth="2" />
-      <text x="200" y="155" textAnchor="middle" fill="#2F4A3A" fontSize="11" fontFamily="sans-serif" fontWeight="600">Head</text>
-      {/* Tape measure */}
-      <path d="M120,150 Q120,70 200,70 Q280,70 280,150" fill="none" stroke="#E07A5F" strokeWidth="3" strokeDasharray="6,3" />
-      <text x="200" y="60" textAnchor="middle" fill="#E07A5F" fontSize="10" fontFamily="sans-serif" fontWeight="600">Circumference</text>
-      {/* Size cards */}
-      <rect x="330" y="30" width="240" height="50" rx="8" fill="#E4ECE7" />
-      <text x="450" y="52" textAnchor="middle" fill="#2F4A3A" fontSize="10" fontFamily="sans-serif" fontWeight="600">Baby: 16-18"</text>
-      <text x="450" y="68" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Add 1" ease for snug fit</text>
-      <rect x="330" y="90" width="240" height="50" rx="8" fill="#E4ECE7" />
-      <text x="450" y="112" textAnchor="middle" fill="#2F4A3A" fontSize="10" fontFamily="sans-serif" fontWeight="600">Kid: 18-21"</text>
-      <text x="450" y="128" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Most common gift size</text>
-      <rect x="330" y="150" width="240" height="50" rx="8" fill="#E4ECE7" />
-      <text x="450" y="172" textAnchor="middle" fill="#2F4A3A" fontSize="10" fontFamily="sans-serif" fontWeight="600">Teen: 21-22"</text>
-      <text x="450" y="188" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Same as adult S</text>
-      <rect x="330" y="210" width="240" height="50" rx="8" fill="#E4ECE7" />
-      <text x="450" y="232" textAnchor="middle" fill="#2F4A3A" fontSize="10" fontFamily="sans-serif" fontWeight="600">Adult: 22-24"</text>
-      <text x="450" y="248" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">Add 1-2" for slouchy</text>
-    </svg>
-  );
-}
-
-function StepImage({ step, title, colors }: { step: string; title: string; colors: string[] }) {
-  return (
-    <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-      <svg viewBox="0 0 200 140" className="w-full" style={{ background: '#F5F0E8' }}>
-        <rect width="200" height="140" fill="#FBF7F1" />
-        <rect x="40" y="30" width="120" height="80" rx="10" fill={colors[0]} opacity="0.8" />
-        <rect x="45" y="35" width="110" height="40" rx={colors.length > 2 ? 6 : 8} fill={colors[1] || colors[0]} opacity="0.3" />
-        <circle cx="170" cy="20" r="14" fill={colors[0]} />
-        <text x="170" y="25" textAnchor="middle" fill="white" fontSize="11" fontFamily="sans-serif" fontWeight="bold">{step}</text>
-        <text x="100" y="128" textAnchor="middle" fill="#5B5B5B" fontSize="9" fontFamily="sans-serif">{title}</text>
-      </svg>
-    </div>
-  );
-}
-
-function EarStyleImage({ style, label, color }: { style: 'soft' | 'pointy' | 'mini'; label: string; color: string }) {
-  const renderEar = () => {
-    switch (style) {
-      case 'soft':
-        return (
-          <g>
-            <path d="M60,90 Q50,40 80,30 Q110,20 100,90" fill={color} />
-            <path d="M140,90 Q130,40 160,30 Q190,20 180,90" fill={color} />
-            <path d="M65,88 Q57,50 82,40 Q97,35 95,88" fill="white" opacity="0.2" />
-            <path d="M145,88 Q137,50 162,40 Q177,35 175,88" fill="white" opacity="0.2" />
-          </g>
-        );
-      case 'pointy':
-        return (
-          <g>
-            <polygon points="60,90 75,15 100,90" fill={color} />
-            <polygon points="140,90 165,15 190,90" fill={color} />
-            <polygon points="67,88 78,30 93,88" fill="white" opacity="0.2" />
-            <polygon points="147,88 162,30 183,88" fill="white" opacity="0.2" />
-          </g>
-        );
-      case 'mini':
-        return (
-          <g>
-            <ellipse cx="75" cy="60" rx="18" ry="25" fill={color} />
-            <ellipse cx="165" cy="60" rx="18" ry="25" fill={color} />
-            <ellipse cx="75" cy="58" rx="10" ry="16" fill="white" opacity="0.2" />
-            <ellipse cx="165" cy="58" rx="10" ry="16" fill="white" opacity="0.2" />
-          </g>
-        );
-    }
-  };
-  return (
-    <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl overflow-hidden shadow-sm">
-      <svg viewBox="0 0 240 120" className="w-full" style={{ background: '#F5F0E8' }}>
-        <rect width="240" height="120" fill="#FBF7F1" />
-        <ellipse cx="120" cy="100" rx="80" ry="25" fill={color} opacity="0.6" />
-        {renderEar()}
-      </svg>
-      <div className="px-3 py-2 text-center">
-        <p className="text-xs font-semibold text-[#1F1F1F]">{label}</p>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Main Component ─── */
 
 export default function BlogArticleCrochetCatEarBeanie() {
@@ -122,14 +9,25 @@ export default function BlogArticleCrochetCatEarBeanie() {
   const openLightbox = (src: string, alt: string) => setLightbox({ src, alt });
   const closeLightbox = () => setLightbox(null);
 
+  const images = {
+    hero: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371511/HERO_IMAGE.jpg',
+    intro: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371510/INTRO_IMAGE.jpg',
+    earSoft: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371511/Cat_Ear_Shaping_Foflt_-_Soft_Ears.jpg',
+    earPointy: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371514/Cat_Ear_Shaping_Pointy_Ears.jpg',
+    earMini: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371508/Cat_Ear_Shaping_Mini_Ears.png',
+  };
+
   return (
     <article className="bg-[#FBF7F1]">
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
-        <div className="absolute inset-0">
-          <HeroCatEarBeanie />
-        </div>
+        <img
+          src={images.hero}
+          alt="Crochet cat ear beanie finished look"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center w-full">
           <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#CCD9D0] hover:text-white mb-6 no-underline transition-colors">← Back to Blog</Link>
@@ -170,9 +68,14 @@ export default function BlogArticleCrochetCatEarBeanie() {
             </p>
           </div>
 
-          {/* Hero Image */}
-          <button type="button" onClick={() => openLightbox('hero', 'Crochet cat ear beanie finished look')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
-            <HeroCatEarBeanie />
+          {/* Intro Image */}
+          <button type="button" onClick={() => openLightbox(images.intro, 'Crochet cat ear beanie finished look')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group">
+            <img
+              src={images.intro}
+              alt="Crochet cat ear beanie finished look"
+              loading="lazy"
+              className="w-full rounded-2xl border border-[#E9E1D7]"
+            />
             <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
               <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
             </span>
@@ -192,12 +95,6 @@ export default function BlogArticleCrochetCatEarBeanie() {
               <span className="w-8 h-8 rounded-lg bg-[#2F4A3A] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">No-Math Sizing (Fits Any Head)</h2>
             </div>
-            <button type="button" onClick={() => openLightbox('sizing', 'Cat ear hat crochet pattern sizing guide')} className="block w-full cursor-pointer bg-transparent border-0 p-0 mb-5 relative group">
-              <SizingGuideImage />
-              <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
-                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
-              </span>
-            </button>
             <div className="space-y-4">
               <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
                 <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Size Chart (Baby to Adult)</h3>
@@ -243,12 +140,6 @@ export default function BlogArticleCrochetCatEarBeanie() {
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">Crochet Cat Ear Beanie Pattern (Beginner Steps)</h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">The rectangle-to-seam method is the easiest <strong>cat ear hat crochet pattern</strong>. No increasing, no decreases, no rounds — just a flat rectangle that becomes a hat.</p>
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              <StepImage step="1" title="Brim" colors={['#2F4A3A', '#E9E1D7']} />
-              <StepImage step="2" title="Body" colors={['#2F4A3A', '#4A7A5E']} />
-              <StepImage step="3" title="Seam" colors={['#2F4A3A', '#E07A5F']} />
-              <StepImage step="4" title="Finish" colors={['#2F4A3A', '#D4C5B0']} />
-            </div>
             <div className="space-y-4">
               <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
                 <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Step 1: The Brim</h3>
@@ -276,11 +167,50 @@ export default function BlogArticleCrochetCatEarBeanie() {
               <h2 className="font-fraunces text-2xl sm:text-3xl font-semibold text-[#1F1F1F] tracking-tight">Cat Ear Shaping (3 Styles)</h2>
             </div>
             <p className="text-sm text-[#5B5B5B] mb-5">Three ways to shape the ears — pick the style that matches your vibe.</p>
-            <div className="grid grid-cols-3 gap-3 mb-6">
-              <EarStyleImage style="soft" label="Soft Ears" color="#2F4A3A" />
-              <EarStyleImage style="pointy" label="Pointy Ears" color="#2F4A3A" />
-              <EarStyleImage style="mini" label="Mini Ears" color="#2F4A3A" />
+
+            {/* Ear Style Images */}
+            <div className="space-y-6 mb-6">
+              <div>
+                <button type="button" onClick={() => openLightbox(images.earSoft, 'Soft Ears - round and cute cat ear shaping')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group mb-3">
+                  <img
+                    src={images.earSoft}
+                    alt="Soft Ears - round and cute cat ear shaping"
+                    loading="lazy"
+                    className="w-full rounded-2xl border border-[#E9E1D7]"
+                  />
+                  <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button type="button" onClick={() => openLightbox(images.earPointy, 'Pointy Ears - classic cat ear shaping')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group mb-3">
+                  <img
+                    src={images.earPointy}
+                    alt="Pointy Ears - classic cat ear shaping"
+                    loading="lazy"
+                    className="w-full rounded-2xl border border-[#E9E1D7]"
+                  />
+                  <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button type="button" onClick={() => openLightbox(images.earMini, 'Mini Ears - subtle and sweet cat ear shaping')} className="block w-full cursor-pointer bg-transparent border-0 p-0 relative group mb-3">
+                  <img
+                    src={images.earMini}
+                    alt="Mini Ears - subtle and sweet cat ear shaping"
+                    loading="lazy"
+                    className="w-full rounded-2xl border border-[#E9E1D7]"
+                  />
+                  <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-2xl flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                  </span>
+                </button>
+              </div>
             </div>
+
             <div className="space-y-4">
               <div className="bg-[#FFFFFF] border border-[#E9E1D7] rounded-xl p-5">
                 <h3 className="font-fraunces text-base font-semibold text-[#1F1F1F] mb-2">Soft Ears (Round + Cute)</h3>
@@ -395,9 +325,11 @@ export default function BlogArticleCrochetCatEarBeanie() {
             <X className="w-5 h-5" />
           </button>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="w-full max-h-[85vh] overflow-auto rounded-2xl shadow-2xl bg-[#F5F0E8] p-4">
-              <p className="text-center text-[#5B5B5B] text-sm italic">{lightbox.alt}</p>
-            </div>
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
             <p className="text-center text-white/80 text-sm mt-3">{lightbox.alt}</p>
           </div>
         </div>
