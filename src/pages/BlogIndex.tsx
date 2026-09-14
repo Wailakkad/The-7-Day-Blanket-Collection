@@ -124,7 +124,7 @@ const BLOG_POSTS = [
     category: 'animals' as CategoryId,
     readTime: '12 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789371511/HERO_IMAGE.jpg',
   },
   {
     slug: 'crochet-cat-hat-ideas',
