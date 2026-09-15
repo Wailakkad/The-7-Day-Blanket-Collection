@@ -33,7 +33,7 @@ const BEGINNER_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: "The simplest scarf you'll ever make — one stitch, one yarn, zero stress.",
     tip: 'Chain loosely to keep the foundation edge from curling. A larger hook on the foundation chain helps.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="40" y="30" width="120" height="60" fill="#A8C6A0" rx="4" opacity="0.6"/><rect x="50" y="38" width="100" height="44" fill="#7BA67A" rx="3" opacity="0.4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">SC Scarf</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487306/SC_Scarf.jpg',
   },
   {
     name: 'Half Double Crochet Scarf',
@@ -42,7 +42,7 @@ const BEGINNER_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Faster than SC with a soft, flexible drape — the most popular beginner scarf.',
     tip: 'HDC has a natural slight ridge — use that texture to your advantage on the edges.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="25" width="130" height="70" fill="#B8D4E8" rx="4" opacity="0.6"/><rect x="45" y="33" width="110" height="54" fill="#7FB3D4" rx="3" opacity="0.4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">HDC Scarf</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487299/HDC_Scarf.jpg',
   },
   {
     name: 'Moss Stitch Scarf',
@@ -51,7 +51,7 @@ const BEGINNER_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: "Woven-look texture that's modern and reversible — hides tension changes.",
     tip: 'The SC+CH1 skip 1 repeat hides small tension changes — very forgiving.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="38" y="28" width="124" height="64" fill="#C9B8D9" rx="4" opacity="0.6"/><rect x="48" y="36" width="104" height="48" fill="#9B85B5" rx="3" opacity="0.4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Moss Stitch</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487271/Moss_Stitch_Scarf.jpg',
   },
   {
     name: 'Double Crochet Scarf',
@@ -60,7 +60,7 @@ const BEGINNER_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'The fastest basic stitch scarf — works up in an evening.',
     tip: 'Keep your chain count a multiple of 3 for easy pattern repeats.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="36" y="26" width="128" height="68" fill="#E8C8A0" rx="4" opacity="0.6"/><rect x="46" y="34" width="108" height="52" fill="#D4A56A" rx="3" opacity="0.4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">DC Scarf</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487200/DC_Scarf.jpg',
   },
   {
     name: 'Simple One-Stitch Scarf',
@@ -69,7 +69,7 @@ const BEGINNER_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Pick any stitch and repeat — the meditative project that builds confidence.',
     tip: 'Try yarn overs at the edges to create a built-in decorative border.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="42" y="32" width="116" height="56" fill="#A0C8B8" rx="4" opacity="0.6"/><rect x="52" y="40" width="96" height="40" fill="#6BA89A" rx="3" opacity="0.4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">One-Stitch</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487303/One_Stitch_Scarf.jpg',
   },
 ];
 
@@ -81,7 +81,7 @@ const STRIPED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Horizontal stripes in 2-3 colors — the easiest way to add visual interest.',
     tip: 'Carry the unused color up the side instead of cutting — saves weaving in ends.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="30" y="25" width="140" height="70" fill="#E8746E" rx="4" opacity="0.5"/><rect x="30" y="40" width="140" height="12" fill="#FFFFFF" opacity="0.4"/><rect x="30" y="58" width="140" height="12" fill="#6B9BC8" opacity="0.5"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Striped</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487136/Striped.jpg',
   },
   {
     name: 'Color Block Scarf',
@@ -90,7 +90,7 @@ const STRIPED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Bold color sections that look modern with zero complex stitches.',
     tip: 'Switch colors at the halfway point — use tapestry crochet to carry the unused yarn inside.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="30" y="25" width="70" height="70" fill="#4A7C59" rx="4" opacity="0.6"/><rect x="100" y="25" width="70" height="70" fill="#E8B86E" rx="4" opacity="0.6"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Color Block</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487115/Color_Block.jpg',
   },
   {
     name: 'Two-Color Alternating Scarf',
@@ -99,7 +99,7 @@ const STRIPED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Switch colors every 2 rows for a classic bar-stripe effect.',
     tip: 'Alternate 2 rows of each color for the cleanest stripe pattern.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="30" y="25" width="140" height="10" fill="#D4566A" opacity="0.5"/><rect x="30" y="37" width="140" height="10" fill="#FFFFFF" opacity="0.4"/><rect x="30" y="49" width="140" height="10" fill="#D4566A" opacity="0.5"/><rect x="30" y="61" width="140" height="10" fill="#FFFFFF" opacity="0.4"/><rect x="30" y="73" width="140" height="10" fill="#D4566A" opacity="0.5"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Alternating</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487227/Alternating.jpg',
   },
   {
     name: 'Gradient Ombré Scarf',
@@ -108,7 +108,7 @@ const STRIPED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Fade between 3 coordinating shades for a sunset effect.',
     tip: 'Fade between colors by alternating rows before the full switch — the gradient looks natural.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><defs><linearGradient id="ombré" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#F4A460" stop-opacity="0.6"/><stop offset="50%" stop-color="#E8746E" stop-opacity="0.5"/><stop offset="100%" stop-color="#C23B3B" stop-opacity="0.4"/></linearGradient></defs><rect x="30" y="25" width="140" height="70" fill="url(#ombré)" rx="4"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Ombré</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487127/Ombr%C3%A9.jpg',
   },
   {
     name: 'Scrap Yarn Stripe Scarf',
@@ -117,7 +117,7 @@ const STRIPED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Use every leftover bit — the more colors, the better it looks.',
     tip: 'Use a consistent hook size and yarn weight across all scraps for a unified fabric.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="30" y="25" width="140" height="10" fill="#A8C6A0" opacity="0.5"/><rect x="30" y="37" width="140" height="10" fill="#E8B86E" opacity="0.5"/><rect x="30" y="49" width="140" height="10" fill="#B8D4E8" opacity="0.5"/><rect x="30" y="61" width="140" height="10" fill="#C9B8D9" opacity="0.5"/><rect x="30" y="73" width="140" height="10" fill="#E8746E" opacity="0.5"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Scrap Yarn</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487159/Scrap_Yarn.jpg',
   },
 ];
 
@@ -318,22 +318,13 @@ export default function BlogArticleFreeCrochetScarfPatterns() {
   return (
     <article className="bg-[#FBF7F1]">
 
-      {/* SVG Hero Placeholder */}
+      {/* Hero */}
       <div className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
-        <svg viewBox="0 0 1200 400" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2F4A3A" />
-              <stop offset="100%" stopColor="#263C30" />
-            </linearGradient>
-          </defs>
-          <rect width="1200" height="400" fill="url(#heroGrad)" />
-          <path d="M0,200 Q300,150 600,200 Q900,250 1200,200" stroke="#FFFFFF" strokeWidth="3" fill="none" opacity="0.1" />
-          <path d="M0,220 Q300,170 600,220 Q900,270 1200,220" stroke="#FFFFFF" strokeWidth="2" fill="none" opacity="0.08" />
-          <circle cx="200" cy="100" r="40" fill="#FFFFFF" opacity="0.05" />
-          <circle cx="1000" cy="300" r="60" fill="#FFFFFF" opacity="0.05" />
-          <text x="600" y="210" textAnchor="middle" fill="#FFFFFF" fontSize="24" fontFamily="serif" opacity="0.15">25 Free Scarf Patterns</text>
-        </svg>
+        <img
+          src="https://res.cloudinary.com/dhkyla1rv/image/upload/v1789487312/hero_banner_bg.jpg"
+          alt="Collection of crocheted scarves in various styles and colors"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center w-full">
           <Link
