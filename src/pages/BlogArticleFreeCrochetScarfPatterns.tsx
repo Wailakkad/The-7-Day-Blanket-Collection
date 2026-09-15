@@ -129,7 +129,7 @@ const TEXTURED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Deep waffle texture that looks store-bought — squishy and warm.',
     tip: 'Front-post DC creates the raised ridges. Count carefully — the pattern repeats every 2 rows.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#8B7355" rx="4" opacity="0.5"/><g opacity="0.4" stroke="#6B5B3D" stroke-width="1.5" fill="none"><line x1="35" y1="40" x2="165" y2="40"/><line x1="35" y1="55" x2="165" y2="55"/><line x1="35" y1="70" x2="165" y2="70"/><line x1="65" y1="28" x2="65" y2="92"/><line x1="95" y1="28" x2="95" y2="92"/><line x1="125" y1="28" x2="125" y2="92"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Waffle Stitch</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789488278/Waffle_Stitch_Scarf.jpg',
   },
   {
     name: 'Ribbed Crochet Scarf',
@@ -138,7 +138,7 @@ const TEXTURED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: "BLO ribbing that stretches and looks like knit — great for men's gifts.",
     tip: 'Work in BLO for the entire scarf to create a stretchy, knit-like ribbing.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#6B8E7B" rx="4" opacity="0.5"/><g opacity="0.4" stroke="#4A6B5A" stroke-width="2" fill="none"><line x1="45" y1="28" x2="45" y2="92"/><line x1="58" y1="28" x2="58" y2="92"/><line x1="71" y1="28" x2="71" y2="92"/><line x1="84" y1="28" x2="84" y2="92"/><line x1="97" y1="28" x2="97" y2="92"/><line x1="110" y1="28" x2="110" y2="92"/><line x1="123" y1="28" x2="123" y2="92"/><line x1="136" y1="28" x2="136" y2="92"/><line x1="149" y1="28" x2="149" y2="92"/><line x1="155" y1="28" x2="155" y2="92"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Ribbed</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789488269/Ribbed_Crochet_Scarf.jpg',
   },
   {
     name: 'Lemon Peel Stitch Scarf',
@@ -147,7 +147,7 @@ const TEXTURED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Overlapping bumps create a magical citrus-skin texture.',
     tip: 'Alternate SC and DC, offsetting each row — the texture builds naturally.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#C9C44A" rx="4" opacity="0.4"/><g opacity="0.5"><circle cx="55" cy="42" r="4" fill="#B0A830"/><circle cx="75" cy="52" r="4" fill="#B0A830"/><circle cx="95" cy="42" r="4" fill="#B0A830"/><circle cx="115" cy="52" r="4" fill="#B0A830"/><circle cx="135" cy="42" r="4" fill="#B0A830"/><circle cx="65" cy="62" r="4" fill="#B0A830"/><circle cx="85" cy="72" r="4" fill="#B0A830"/><circle cx="105" cy="62" r="4" fill="#B0A830"/><circle cx="125" cy="72" r="4" fill="#B0A830"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Lemon Peel</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789488273/Lemon_Peel_Stitch_Scarf.jpg',
   },
   {
     name: 'Seed Stitch Scarf',
@@ -156,7 +156,7 @@ const TEXTURED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Subtle nubby texture that looks elegant in solid colors.',
     tip: 'Use an odd number of stitches so each row starts with SC — the pattern stays aligned.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#9B8B7A" rx="4" opacity="0.4"/><g opacity="0.5"><circle cx="50" cy="45" r="2.5" fill="#7A6B5A"/><circle cx="70" cy="55" r="2.5" fill="#7A6B5A"/><circle cx="90" cy="45" r="2.5" fill="#7A6B5A"/><circle cx="110" cy="55" r="2.5" fill="#7A6B5A"/><circle cx="130" cy="45" r="2.5" fill="#7A6B5A"/><circle cx="150" cy="55" r="2.5" fill="#7A6B5A"/><circle cx="60" cy="65" r="2.5" fill="#7A6B5A"/><circle cx="80" cy="75" r="2.5" fill="#7A6B5A"/><circle cx="100" cy="65" r="2.5" fill="#7A6B5A"/><circle cx="120" cy="75" r="2.5" fill="#7A6B5A"/><circle cx="140" cy="65" r="2.5" fill="#7A6B5A"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Seed Stitch</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789488278/Seed_Stitch_Scarf.jpg',
   },
   {
     name: 'Basketweave Scarf',
@@ -165,7 +165,7 @@ const TEXTURED_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Faux cable look without a cable hook — impressive texture.',
     tip: 'Skip 2, DC in next 2, go back and DC in the skipped stitches — instant faux cable.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#7A6B5A" rx="4" opacity="0.5"/><g opacity="0.4" stroke="#5A4B3A" stroke-width="1.5" fill="none"><rect x="45" y="35" width="20" height="20"/><rect x="70" y="35" width="20" height="20"/><rect x="95" y="35" width="20" height="20"/><rect x="120" y="35" width="20" height="20"/><rect x="57" y="55" width="20" height="20"/><rect x="82" y="55" width="20" height="20"/><rect x="107" y="55" width="20" height="20"/><rect x="132" y="55" width="20" height="20"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Basketweave</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789488247/Basketweave_Scarf.jpg',
   },
 ];
 
