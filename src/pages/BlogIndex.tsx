@@ -11,6 +11,7 @@ const CATEGORIES = [
   { id: 'cups', label: 'Cups & Mugs', icon: Coffee },
   { id: 'bags', label: 'Bags & Pouches', icon: ShoppingBag },
   { id: 'animals', label: 'Animals', icon: Cat },
+  { id: 'scarves', label: 'Scarves', icon: BookOpen },
 ] as const;
 
 type CategoryId = typeof CATEGORIES[number]['id'];
@@ -136,6 +137,28 @@ const BLOG_POSTS = [
     readTime: '20 min read',
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789379013/Hero_Banner_Background.jpg',
+  },
+  {
+    slug: 'free-crochet-scarf-patterns',
+    icon: BookOpen,
+    title: 'Free Crochet Scarf Patterns: 25 Stylish Scarves for Every Skill Level',
+    description: 'Browse 25 free crochet scarf patterns from beginner-friendly rectangles to eyelet lace and cable wraps — with yarn weights, hook sizes, and finishing tips.',
+    tag: 'Pattern Guide',
+    category: 'scarves' as CategoryId,
+    readTime: '22 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
+  },
+  {
+    slug: 'crochet-hooded-infinity-scarf-patterns',
+    icon: BookOpen,
+    title: 'Crochet Hooded Infinity Scarf Patterns: 15 Cozy Designs That Double as Hoodies',
+    description: 'Discover 15 free crochet hooded infinity scarf patterns — cozy scarves with built-in hoods, pockets, and convertible designs for winter warmth.',
+    tag: 'Pattern Guide',
+    category: 'scarves' as CategoryId,
+    readTime: '20 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
   },
 ];
 
