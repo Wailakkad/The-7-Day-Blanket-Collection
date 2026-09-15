@@ -177,7 +177,7 @@ const CHUNKY_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Finished in under 2 hours — the fastest scarf on this list.',
     tip: 'Use a 6.5mm or 8mm hook with bulky yarn for maximum speed and squish.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="25" y="20" width="150" height="80" fill="#A8C6A0" rx="6" opacity="0.5"/><rect x="35" y="30" width="130" height="60" fill="#7BA67A" rx="4" opacity="0.3"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Chunky Bulky</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502805/Chunky_Bulky_Scarf.jpg',
   },
   {
     name: 'Super Bulky Quick Scarf',
@@ -186,7 +186,7 @@ const CHUNKY_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'One skein, one evening, one cozy scarf — perfect for gifts.',
     tip: 'Super bulky yarn hides imperfections — perfect for gifting even if you are a beginner.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="20" y="15" width="160" height="90" fill="#D4A56A" rx="6" opacity="0.5"/><rect x="30" y="25" width="140" height="70" fill="#B8924A" rx="4" opacity="0.3"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Super Bulky</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502799/Super_Bulky_Quick_Scarf.jpg',
   },
   {
     name: 'Oversized Cozy Scarf',
@@ -195,7 +195,7 @@ const CHUNKY_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Extra-wide and extra-long for maximum winter warmth.',
     tip: 'Start with 35-40 chains for an oversized width — bigger is cozier with this style.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="15" y="10" width="170" height="100" fill="#C9B8D9" rx="6" opacity="0.5"/><rect x="25" y="20" width="150" height="80" fill="#9B85B5" rx="4" opacity="0.3"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Oversized</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502698/Woman_wearing_crochet_scarf_2K_20260915214317.jpg',
   },
   {
     name: 'Long Winter Scarf',
@@ -204,7 +204,7 @@ const CHUNKY_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Classic long scarf that wraps twice — warm and practical.',
     tip: 'Aim for 60-70 inches long — long enough to wrap around the neck twice.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="25" y="30" width="150" height="55" fill="#B8D4E8" rx="4" opacity="0.5"/><rect x="25" y="30" width="75" height="55" fill="#7FB3D4" rx="4" opacity="0.3"/><rect x="100" y="30" width="75" height="55" fill="#7FB3D4" rx="4" opacity="0.3"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Long Winter</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502811/Long_Winter_Scarf.jpg',
   },
   {
     name: 'Puff Stitch Scarf',
@@ -213,7 +213,7 @@ const CHUNKY_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Puffy texture in bulky yarn — maximum coziness with minimum effort.',
     tip: 'Yarn over and pull up 3 times per puff — the bulkier the yarn, the fewer puffs you need.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#E8A0A0" rx="4" opacity="0.5"/><g opacity="0.5"><circle cx="55" cy="45" r="7" fill="#D47070"/><circle cx="80" cy="55" r="7" fill="#D47070"/><circle cx="105" cy="45" r="7" fill="#D47070"/><circle cx="130" cy="55" r="7" fill="#D47070"/><circle cx="155" cy="45" r="7" fill="#D47070"/><circle cx="67" cy="68" r="7" fill="#D47070"/><circle cx="92" cy="78" r="7" fill="#D47070"/><circle cx="117" cy="68" r="7" fill="#D47070"/><circle cx="142" cy="78" r="7" fill="#D47070"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Puff Stitch</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502816/Woman_wearing_crochet_scarf_2K_20260915214037.jpg',
   },
 ];
 
@@ -225,7 +225,7 @@ const STYLE_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Granny stitch clusters that look vintage and cozy.',
     tip: 'Work 3 DC clusters into the spaces of the previous row — the classic granny pattern.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#B89A6B" rx="4" opacity="0.5"/><g opacity="0.5"><polygon points="55,38 65,38 60,48" fill="#8B7340"/><polygon points="80,38 90,38 85,48" fill="#8B7340"/><polygon points="105,38 115,38 110,48" fill="#8B7340"/><polygon points="130,38 140,38 135,48" fill="#8B7340"/><polygon points="67,55 77,55 72,65" fill="#8B7340"/><polygon points="92,55 102,55 97,65" fill="#8B7340"/><polygon points="117,55 127,55 122,65" fill="#8B7340"/><polygon points="55,72 65,72 60,82" fill="#8B7340"/><polygon points="80,72 90,72 85,82" fill="#8B7340"/><polygon points="105,72 115,72 110,82" fill="#8B7340"/><polygon points="130,72 140,72 135,82" fill="#8B7340"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Granny-Inspired</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502727/Granny_Inspired_Scarf.jpg',
   },
   {
     name: 'Modern Minimal Scarf',
@@ -234,7 +234,7 @@ const STYLE_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Clean lines, solid color, zero frills — the Scandinavian look.',
     tip: 'Choose a single neutral color and keep edges perfectly straight for the minimalist effect.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="30" width="130" height="60" fill="#D5D0C8" rx="3" opacity="0.6"/><rect x="35" y="55" width="130" height="2" fill="#B8B0A5" opacity="0.5"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Modern Minimal</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502679/Modern_Minimal_Scarf.jpg',
   },
   {
     name: 'Statement Crochet Scarf',
@@ -243,7 +243,7 @@ const STYLE_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Bold texture and color that makes people ask where you bought it.',
     tip: 'Use a bold color like emerald or mustard with a textured stitch for maximum impact.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="30" y="20" width="140" height="80" fill="#D4566A" rx="6" opacity="0.5"/><g opacity="0.4"><circle cx="55" cy="40" r="8" fill="#FFFFFF"/><circle cx="100" cy="40" r="8" fill="#FFFFFF"/><circle cx="145" cy="40" r="8" fill="#FFFFFF"/><circle cx="77" cy="65" r="8" fill="#FFFFFF"/><circle cx="122" cy="65" r="8" fill="#FFFFFF"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Statement</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502679/Statement_Crochet_Scarf.jpg',
   },
   {
     name: 'Gift-Worthy Neutral Scarf',
@@ -252,7 +252,7 @@ const STYLE_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Cream, camel, or grey — the safe gift that everyone loves.',
     tip: 'Add a gift tag with care instructions — it makes the handmade gift feel extra special.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#E8DDD0" rx="4" opacity="0.7"/><rect x="35" y="28" width="130" height="20" fill="#D4C8B5" rx="4" opacity="0.3"/><rect x="35" y="72" width="130" height="20" fill="#D4C8B5" rx="4" opacity="0.3"/><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Gift-Worthy</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502629/Gift_Worthy_Neutral_Scarf.jpg',
   },
   {
     name: 'Fall Crochet Scarf',
@@ -261,7 +261,7 @@ const STYLE_SCARFS: PatternCard[] = [
     construction: 'Rows',
     why: 'Warm autumn tones in moss or shell stitch — cozy season essential.',
     tip: 'Use self-striping autumn yarn for the color effect without changing skeins.',
-    image: 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF7F1" rx="8"/><rect x="35" y="28" width="130" height="64" fill="#C87A3A" rx="4" opacity="0.5"/><g opacity="0.5"><ellipse cx="65" cy="50" rx="12" ry="8" fill="#A06020"/><ellipse cx="100" cy="55" rx="12" ry="8" fill="#8B4513"/><ellipse cx="135" cy="50" rx="12" ry="8" fill="#A06020"/><ellipse cx="82" cy="70" rx="12" ry="8" fill="#8B4513"/><ellipse cx="117" cy="70" rx="12" ry="8" fill="#A06020"/></g><text x="100" y="112" text-anchor="middle" fill="#5B5B5B" font-size="9" font-family="sans-serif">Fall Scarf</text></svg>'),
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789502684/Fall_Crochet_Scarf.jpg',
   },
 ];
 
