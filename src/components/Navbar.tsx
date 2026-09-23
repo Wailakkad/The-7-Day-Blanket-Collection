@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/blog', label: 'Blog' },
   { to: '/store', label: 'Store' },
+  { to: '/free-patterns', label: 'Free Patterns' },
 ];
 
 export default function Navbar() {
