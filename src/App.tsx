@@ -20,6 +20,7 @@ import BlogArticleFreeCrochetScarfPatterns from './pages/BlogArticleFreeCrochetS
 import BlogArticleCrochetHoodedInfinityScarfPatterns from './pages/BlogArticleCrochetHoodedInfinityScarfPatterns';
 import StorePage from './pages/StorePage';
 import FreePatterns from './pages/FreePatterns';
+import FreePatternDetail from './pages/FreePatternDetail';
 import BlanketCollectionLandingPage from './components/BlanketCollectionLandingPage';
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/blog/crochet-hooded-infinity-scarf-patterns" element={<BlogArticleCrochetHoodedInfinityScarfPatterns />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/free-patterns" element={<FreePatterns />} />
+        <Route path="/free-patterns/:slug" element={<FreePatternDetail />} />
         <Route path="/store/:slug" element={<BlanketCollectionLandingPage />} />
       </Routes>
       <AdBanner />

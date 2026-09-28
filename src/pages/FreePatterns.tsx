@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Download, Ghost, Snowflake, LayoutGrid } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Download, Ghost, Snowflake, LayoutGrid, Eye } from 'lucide-react';
 
 export const metadata = {
   title: 'Free Crochet Patterns Library | The 7-Day Crochet Blanket Collection',
@@ -17,14 +18,16 @@ export const metadata = {
 };
 
 interface CrochetPattern {
+  slug: string;
   title: string;
   description: string;
   driveId: string;
   image?: string;
   category: CategoryId;
+  details: string[];
 }
 
-type CategoryId = 'halloween' | 'winter';
+export type CategoryId = 'halloween' | 'winter';
 
 interface Category {
   id: CategoryId;
@@ -32,92 +35,169 @@ interface Category {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const CATEGORIES: Category[] = [
+export const CATEGORIES: Category[] = [
   { id: 'halloween', label: 'Halloween Crochet', icon: Ghost },
   { id: 'winter', label: 'Winter Crochet', icon: Snowflake },
 ];
 
-const PATTERNS: CrochetPattern[] = [
+export const PATTERNS: CrochetPattern[] = [
   {
+    slug: 'ronnie-the-halloween-cat',
     title: 'Ronnie the Halloween Cat',
     description: 'Cute Halloween cat amigurumi pattern (PDF).',
     driveId: '1d6JgXvtgQHSlFB193YGtFqq7snTCM8M3',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186628/Ronnie_the_Halloween_Cat.jpg',
     category: 'halloween',
+    details: [
+      'Amigurumi-style Halloween cat you can crochet in one sitting',
+      'Great stash-busting project for spooky season decor and gifting',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'little-pumpkin-hat',
     title: 'Little Pumpkin Hat',
     description: 'Cozy pumpkin hat for fall/Halloween (PDF).',
     driveId: '1on2WLREfT_0OqpVZr2DjOJ8vomabUoEY',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186754/Little_Pumpkin_Hat.jpg',
     category: 'halloween',
+    details: [
+      'Playful pumpkin-inspired hat for fall and Halloween wear',
+      'A quick make that works great as a photo prop or costume piece',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'skulls-pullover',
     title: 'Skulls Pullover (Lion Brand Pound Of Love)',
     description: 'Statement skulls pullover pattern (PDF).',
     driveId: '1bsYSZgOil4JvEXqvypWCy6j45kaC3wqh',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186751/Skulls_Pullover.jpg',
     category: 'halloween',
+    details: [
+      'Bold statement pullover designed for Lion Brand Pound of Love yarn',
+      'A wearable Halloween piece you can style all season long',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'edward-the-cat',
     title: 'Edward the Cat',
     description: 'Cat amigurumi pattern (PDF).',
     driveId: '1L6a1g4nhNE62iXjGxIrMfZ1OMIDEHyb5',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186609/Edward_the_Cat.jpg',
     category: 'halloween',
+    details: [
+      'Classic cat amigurumi with plenty of character',
+      'Perfect first amigurumi project for confident beginners',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'pumpkin',
     title: 'Pumpkin',
     description: 'Halloween pumpkin crochet pattern (PDF).',
     driveId: '1kArtj9GTJis39sInAgkBYM1vsSMmg6Sn',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186718/Pumpkin.jpg',
     category: 'halloween',
+    details: [
+      'Stuffed crochet pumpkin for effortless autumn and Halloween decor',
+      'Works beautifully as a table centerpiece or shelf accent',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'halloween-bats-ornament',
     title: 'Halloween Bats Ornament',
     description: 'Spooky bat ornament pattern for Halloween decor (PDF).',
     driveId: '1dPsItKyGgKNvgvOk59ndjcH-q_oI7f_-',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186582/Halloween_Bats_Ornament.jpg',
     category: 'halloween',
+    details: [
+      'Spooky bat ornaments for garlands, trees, and party decor',
+      'Small and fast — make a whole swarm from scrap yarn',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'candy-bowl',
     title: 'Candy Bowl (from scrap yarn)',
     description: 'Scrap-yarn candy bowl crochet pattern (PDF).',
     driveId: '1fv5FQ0pPoXK8NI8qqQDV5XiVWcvPNMjE',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186656/Candy_Bowl.jpg',
     category: 'halloween',
+    details: [
+      'Use up leftover scrap yarn in one practical project',
+      'A cute bowl for candy, keys, or small Halloween treats',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'spooky-pumpkin-jar-cozy',
     title: 'Spooky Pumpkin Jar Cozy',
     description: 'Pumpkin jar cozy pattern for spooky fall decor (PDF).',
     driveId: '1OaDLnSm95X2xau4UYNq3bdrR7o15PjvJ',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186635/Spooky_Pumpkin_Jar_Cozy.jpg',
     category: 'halloween',
+    details: [
+      'Turns an ordinary jar into a spooky pumpkin candle holder',
+      'A quick upcycle project for fall tables and mantels',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'tomato',
     title: 'Tomato',
     description: 'Cute tomato crochet pattern (PDF).',
     driveId: '1HdznVA-F6n6Irq9M5qbIvYayRVUBqduv',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790186608/Tomato.jpg',
     category: 'halloween',
+    details: [
+      'Cute amigurumi tomato — a fun kitchen or market bag charm',
+      'Small, quick, and beginner-friendly amigurumi',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'newborn-bennett-beanie',
     title: 'Newborn Bennett Beanie',
     description: 'Sweet newborn beanie crochet pattern for winter (PDF).',
     driveId: '1J3X99qIMwxL2rIO9MQHBLeeCQBSr-pU_',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790591096/Newborn_crochet_beanie_cover_img.jpg',
     category: 'winter',
+    details: [
+      'Sweet winter beanie sized for newborns',
+      'A fast, thoughtful handmade gift for baby showers',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
   {
+    slug: 'fingerless-gloves',
     title: 'Fingerless Gloves',
     description: 'Cozy fingerless gloves crochet free pattern for winter (PDF).',
     driveId: '18H3mzHDcBzBoPkU-AQ1pMZOrl5zWkx-4',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1790591107/Crochet_fingerless_gloves_cover_image.jpg',
     category: 'winter',
+    details: [
+      'Cozy fingerless gloves that keep your hands warm and free',
+      'Practical winter make for commuting, office, and gifting',
+      'Written in US crochet terms with a free PDF download',
+      'Instant access — no sign-up or payment needed',
+    ],
   },
 ];
 
-const downloadUrl = (driveId: string) =>
+export const downloadUrl = (driveId: string) =>
   `https://drive.google.com/uc?export=download&id=${driveId}`;
 
 export default function FreePatterns() {
@@ -240,14 +320,22 @@ export default function FreePatterns() {
                     <p className="text-sm text-[#5B5B5B] leading-relaxed mb-5 flex-1">
                       {pattern.description}
                     </p>
-                    <a
-                      href={downloadUrl(pattern.driveId)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#2F4A3A] text-white text-sm font-semibold hover:bg-[#263C30] transition-colors no-underline shadow-sm"
-                    >
-                      <Download className="w-4 h-4" /> Download PDF
-                    </a>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={downloadUrl(pattern.driveId)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex flex-1 items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#2F4A3A] text-white text-sm font-semibold hover:bg-[#263C30] transition-colors no-underline shadow-sm"
+                      >
+                        <Download className="w-4 h-4" /> Download PDF
+                      </a>
+                      <Link
+                        to={`/free-patterns/${pattern.slug}`}
+                        className="inline-flex flex-1 items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E9E1D7] text-[#2F4A3A] text-sm font-semibold hover:bg-[#F4ECE2] hover:border-[#2F4A3A]/40 transition-colors no-underline"
+                      >
+                        <Eye className="w-4 h-4" /> Details
+                      </Link>
+                    </div>
                   </div>
                 </article>
               );
