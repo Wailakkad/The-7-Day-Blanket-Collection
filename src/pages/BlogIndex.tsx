@@ -169,7 +169,7 @@ const BLOG_POSTS = [
     category: 'hats' as CategoryId,
     readTime: '15 min read',
     level: 'Beginner Friendly',
-    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791822042/Blog_Cover_polar_bear_balaclava.jpg',
   },
 ];
 

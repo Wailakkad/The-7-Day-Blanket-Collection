@@ -37,10 +37,8 @@ export default function BlogArticleCrochetBalaclavaPatternPolarBear() {
     };
   }, []);
 
-  // TODO: Upload polar bear balaclava photos to Cloudinary and replace these placeholder image URLs
-  // (repo convention is res.cloudinary.com/dhkyla1rv/... — interim images reuse existing winter/hat photos)
   const images = {
-    hero: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+    hero: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791822042/Blog_Cover_polar_bear_balaclava.jpg',
   };
 
   return (
