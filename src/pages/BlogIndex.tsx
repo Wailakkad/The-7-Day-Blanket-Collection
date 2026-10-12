@@ -160,6 +160,17 @@ const BLOG_POSTS = [
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1788183176/Section_Image_Textured_Blanket_Stitches.jpg',
   },
+  {
+    slug: 'free-crochet-balaclava-pattern-polar-bear',
+    icon: Scissors,
+    title: 'Free Polar Bear Crochet Balaclava Pattern (Toddler–Adult) + Size Chart',
+    description: 'Make a cozy Polar Bear crochet balaclava hood with this free pattern! Beginner-friendly steps, sizing for toddler/child/adult, yarn tips, and a printable size chart.',
+    tag: 'Pattern Guide',
+    category: 'hats' as CategoryId,
+    readTime: '15 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1789041354/hero_banner_background_image.jpg',
+  },
 ];
 
 export default function BlogIndex() {
