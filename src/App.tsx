@@ -19,6 +19,7 @@ import BlogArticleCrochetCatHatIdeas from './pages/BlogArticleCrochetCatHatIdeas
 import BlogArticleFreeCrochetScarfPatterns from './pages/BlogArticleFreeCrochetScarfPatterns';
 import BlogArticleCrochetHoodedInfinityScarfPatterns from './pages/BlogArticleCrochetHoodedInfinityScarfPatterns';
 import BlogArticleCrochetBalaclavaPatternPolarBear from './pages/BlogArticleCrochetBalaclavaPatternPolarBear';
+import BlogArticleBalaclavaFitGuide from './pages/BlogArticleBalaclavaFitGuide';
 import StorePage from './pages/StorePage';
 import FreePatterns from './pages/FreePatterns';
 import FreePatternDetail from './pages/FreePatternDetail';
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/blog/free-crochet-scarf-patterns" element={<BlogArticleFreeCrochetScarfPatterns />} />
         <Route path="/blog/crochet-hooded-infinity-scarf-patterns" element={<BlogArticleCrochetHoodedInfinityScarfPatterns />} />
         <Route path="/blog/free-crochet-balaclava-pattern-polar-bear" element={<BlogArticleCrochetBalaclavaPatternPolarBear />} />
+        <Route path="/blog/crochet-balaclava-face-opening-fit-guide" element={<BlogArticleBalaclavaFitGuide />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/free-patterns" element={<FreePatterns />} />
         <Route path="/free-patterns/:slug" element={<FreePatternDetail />} />

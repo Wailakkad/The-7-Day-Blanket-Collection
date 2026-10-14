@@ -171,6 +171,17 @@ const BLOG_POSTS = [
     level: 'Beginner Friendly',
     image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791822042/Blog_Cover_polar_bear_balaclava.jpg',
   },
+  {
+    slug: 'crochet-balaclava-face-opening-fit-guide',
+    icon: Calculator,
+    title: 'Crochet Balaclava Fit Guide: How to Get the Face Opening Perfect (No Sagging!)',
+    description: 'Learn how to size a crochet balaclava so the face opening fits perfectly—no sagging and no tight spots. Includes measurements, gauge tips, easy adjustments, and a free printable fit cheat sheet.',
+    tag: 'Balaclava',
+    category: 'hats' as CategoryId,
+    readTime: '10 min read',
+    level: 'Beginner Friendly',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791990554/Crochet_Balaclava_Fit_Guide_How_to_Get_the_Face_Opening_cover_image.jpg',
+  },
 ];
 
 export default function BlogIndex() {
